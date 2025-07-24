@@ -7,8 +7,8 @@ const Footer = () => {
     <div className='flex justify-between px-10 items-center w-full bg-gray-800 text-white py-4  '> {/* Added background, padding, margin, text-center */}
       <p>Design & Developed By Abdul Rahman</p>
       <div className="flex gap-4">
-        <a href=""><FaGithub size={30}/></a>
-        <a href=""><FaLinkedin size={30}/></a>
+        <a className="hover:text-yellow-400 transition-all duration-300 ease-in-out" href="https://github.com/AbdulCodeCraft" target="_blank"><FaGithub size={30}/></a>
+        <a className="hover:text-yellow-400 transition-all duration-300 ease-in-out" href="https://www.linkedin.com/in/ar-abdulrahman" target="_blank"><FaLinkedin size={30}/></a>
       </div>
     </div>
   )
