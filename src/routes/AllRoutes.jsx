@@ -1,7 +1,7 @@
 import {BrowserRouter,Routes,Route} from "react-router-dom";
-import HomePage from "../pages/home/HomePage.jsx"
-import AboutPage from "../pages/about/AboutPage.jsx"
-import NotFound from "../pages/notFound/NotFound.jsx"
+import HomePage from "../pages/HomePage.jsx"
+import AboutPage from "../pages/AboutPage.jsx"
+import NotFound from "../pages/NotFound.jsx"
 
 const AllRoutes = () => {
   return (
