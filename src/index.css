@@ -2,5 +2,6 @@
 
 @theme{
     --background-image-hero: url('/images/bg.jpg');
-    --background-image-hero-2 :url('/images/bg-2.avif')
-}
+    --background-image-hero-2 :url('/images/bg-2.avif');
+    --background-image-about :url('/images/about-bg.jpg');
+}     
