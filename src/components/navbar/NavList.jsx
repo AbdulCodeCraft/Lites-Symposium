@@ -6,9 +6,9 @@ const NavList = () => {
     <ul className="flex gap-7">
           <li className={listStyle}><Link to={"/"}>Home</Link></li>
           <li className={listStyle}><Link to={"/about"}>About Us</Link></li>
-          <li className={listStyle}><Link to={"/coards"}>Coards</Link></li>
-          <li className={listStyle}><Link to={"/faq"}>FAQ's</Link></li>
+          <li className={listStyle}><Link to={"/coardinators"}>Coardinators</Link></li>
           <li className={listStyle}><Link to={"/events"}>Events</Link></li>
+          <li className={listStyle}><Link to={"/faq"}>FAQ's</Link></li>
           <li className={listStyle}><Link to={"/admin"}>Admin</Link></li>
         </ul>
   )
