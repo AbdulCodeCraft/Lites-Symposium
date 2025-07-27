@@ -2,8 +2,8 @@ const Table = (props) => {
   console.log(props.tableDatas);
 
   return (
-    <div className="text-white pt-10">
-      <h1>{props.title} Coardinators</h1>
+    <div className="text-white pt-10 space-y-3">
+      <h1 className="text-2xl font-semibold">{props.title} Coardinators</h1>
       <div className="border-1 border-gray-700 rounded-lg">
         <table className="min-w-full rounded-lg table-auto overflow-hidden  text-center ">
           <thead className="divide-y divide-gray-700">
@@ -17,9 +17,9 @@ const Table = (props) => {
             {props.tableDatas.map((item) => {
               return (
                 <tr>
-                  <td className="px-6 py-4">{item.event_name}</td>
-                  <td className="px-6 py-4">{item.coardinator_name}</td>
-                  <td className="px-6 py-4">{item.contact_number}</td>
+                  <td className="px-6 py-4">{props.overallCoardinator ? item.coardinator_name : item.event_name}</td>
+                  <td className="px-6 py-4">{props.overallCoardinator ? item.contact_number : item.coardinator_name}</td>
+                  <td className="px-6 py-4">{props.overallCoardinator ? item.role : item.contact_number}</td>
                 </tr>
               );
             })}
