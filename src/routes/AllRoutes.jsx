@@ -5,6 +5,9 @@ import NotFound from "../pages/NotFound.jsx"
 import Coardinators from "../pages/Coardinator.jsx"
 import EventPage from "../pages/EventPage.jsx";
 import EventDetailsPage from "../pages/EventDetailsPage.jsx";
+import FaqPage from "../pages/FaqPage.jsx";
+
+
 
 const AllRoutes = () => {
   return (
@@ -16,6 +19,7 @@ const AllRoutes = () => {
             <Route path="/coardinators" element={<Coardinators/>}/>
             <Route path="*" element={<NotFound/>}/>
             <Route path="/about" element={<AboutPage/>}/>
+            <Route path="/faq" element={<FaqPage/>}/>
             
         </Routes>
     </BrowserRouter>
