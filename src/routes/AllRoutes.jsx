@@ -6,6 +6,7 @@ import Coardinators from "../pages/Coardinator.jsx"
 import EventPage from "../pages/EventPage.jsx";
 import EventDetailsPage from "../pages/EventDetailsPage.jsx";
 import FaqPage from "../pages/FaqPage.jsx";
+import RegisterPage from "../pages/RegisterPage.jsx";
 
 
 
@@ -20,6 +21,7 @@ const AllRoutes = () => {
             <Route path="*" element={<NotFound/>}/>
             <Route path="/about" element={<AboutPage/>}/>
             <Route path="/faq" element={<FaqPage/>}/>
+            <Route path="/register" element={<RegisterPage/>}/>
             
         </Routes>
     </BrowserRouter>

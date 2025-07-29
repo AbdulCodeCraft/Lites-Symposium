@@ -1,7 +1,7 @@
 import CountTownTimer from "../components/CountDownTimer.jsx";
 import MapCard from "../components/MapCard.jsx";
 import Layout from "../layout/Layout.jsx";
-
+import { Link } from "react-router-dom";
 const HomePage = () => {
   return (
     <Layout>
@@ -20,9 +20,9 @@ const HomePage = () => {
             skills, and connect with the industry's brightest minds. This is
             where the future of code is shaped.
           </p>
-          <button className=" border-2 border-yellow-400 text-white px-10 py-3 hover:bg-yellow-400 transition-all duration-300 ease-in hover:text-black rounded-md">
+          <Link to={"/register"} className=" border-2 border-yellow-400 text-white px-10 py-3 hover:bg-yellow-400 transition-all duration-300 ease-in hover:text-black rounded-md">
             Regiter Now
-          </button>
+          </Link>
         </div>
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-100"></div>
