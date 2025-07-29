@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 const HomePage = () => {
   return (
     <Layout>
-      <div className="relative min-h-screen">
+      <div className="px-4 md:p-0 relative min-h-screen">
         <div className="absolute inset-0 bg-[image:var(--background-image-hero)] min-h-screen bg-cover bg-center bg-no-repeat "></div>
         <div className="absolute inset-0 bg-violet-950 opacity-70"></div>
 
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative top-10 z-10 flex flex-col gap-4 items-center pt-50 min-h-screen text-white">
-          <h1 className="text-8xl font-bold">Heroic_Coders'25</h1>
-          <p className=" text-center text-xl w-200">
+          <h1 className="text-3xl md:text-8xl font-bold">Heroic_Coders'25</h1>
+          <p className=" text-center text-sm md:text-xl md:w-200">
             Welcome to Heroic Coders 2025 – the premier symposium for
             developers, innovators, and tech enthusiasts. Dive into the latest
             breakthroughs in [Mention 1-2 specific tech areas, e.g., AI,
@@ -27,7 +27,7 @@ const HomePage = () => {
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-100"></div>
       <div className="flex flex-col items-center gap-3  bg-black bg-no-repeat bg-cover text-white min-h-screen">
-        <h1 className="text-2xl">The Event Starts In</h1>
+        <h1 className="text-lg md:text-2xl">The Event Starts In</h1>
         <CountTownTimer duration={2 * 24 * 60 * 60 * 1000} />
         <h1>October 15 , 9:00 PM</h1>
 

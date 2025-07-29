@@ -39,7 +39,7 @@ const CountDownTimer = () => {
 
   return (
     <div>
-      <h1 className="text-7xl font-semibold">
+      <h1 className="text-3xl lg:text-7xl font-semibold">
         {getFormattedTime(remainingTime)}
       </h1>
     </div>
