@@ -6,7 +6,7 @@ const CheckList = ({ title, lists }) => {
         {lists.map((list, index) => {
           return (
             <div key={index} className="space-x-2">
-              <input className="w-5 h-5 rounded-md border-gray-600 bg-gray-800 focus:ring-1" type="checkbox" name=""  />
+              <input className="w-5 h-5 accent-blue-500 rounded-md border-gray-600 bg-gray-800 focus:ring-1" type="checkbox" name=""  />
               <label >{list}</label>
             </div>
           );

@@ -42,7 +42,7 @@ const AboutPage = () => {
         </div>
         <div className="p-10 flex justify-center items-center">
           <div className="relative w-3/4 h-150 rounded-md flex gap-2 overflow-hidden">
-            <div className=" bg-red-500 w-1/3 h-full">
+            <div className="w-1/3 h-full">
               <img
                 src="/images/about-card-1.jpg"
                 className="object-cover h-full"
@@ -50,14 +50,14 @@ const AboutPage = () => {
               />
             </div>
             <div className=" w-2/3 h-full  flex flex-col gap-2 ">
-              <div className="h-1/2 bg-white  flex items-center justify-center overflow-hidden">
+              <div className="h-1/2   flex items-center justify-center overflow-hidden">
                 <img
                   src="/images/about-card-2.jpg"
                   alt=""
                   className="object-cover"
                 />
               </div>
-              <div className="h-1/2  bg-pink-900 flex items-center justify-center overflow-hidden">
+              <div className="h-1/2   flex items-center justify-center overflow-hidden">
                 <img
                   src="/images/about-card-3.jpg"
                   alt=""

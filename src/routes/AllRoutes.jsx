@@ -7,13 +7,17 @@ import EventPage from "../pages/EventPage.jsx";
 import EventDetailsPage from "../pages/EventDetailsPage.jsx";
 import FaqPage from "../pages/FaqPage.jsx";
 import RegisterPage from "../pages/RegisterPage.jsx";
+import AdminLogin from "../pages/AdminLogin.jsx";
+import ScrollToTop from "../components/ScrollToTop.jsx"
 
 
 
 const AllRoutes = () => {
   return (
     <BrowserRouter>
+    <ScrollToTop/>
         <Routes>
+          
             <Route path="/" element={<HomePage/>}/>
             <Route path="events" element={<EventPage/>}/>
             <Route path="events/:id" element={<EventDetailsPage/>}/>
@@ -22,6 +26,7 @@ const AllRoutes = () => {
             <Route path="/about" element={<AboutPage/>}/>
             <Route path="/faq" element={<FaqPage/>}/>
             <Route path="/register" element={<RegisterPage/>}/>
+            <Route path="/admin" element={<AdminLogin/>}/>
             
         </Routes>
     </BrowserRouter>

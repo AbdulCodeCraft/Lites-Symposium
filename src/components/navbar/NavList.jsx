@@ -10,7 +10,7 @@ const NavList = () => {
           <li className={listStyle}><Link to={"/events"}>Events</Link></li>
           <li className={listStyle}><Link to={"/faq"}>FAQ's</Link></li>
           <li className={listStyle}><Link to={"/admin"}>Admin</Link></li>
-          <li className="border-2 border-yellow-400 px-3 rounded-md hover:text-black transition-all duration-300 hover:bg-yellow-400 "><Link to={"/register"}>Register</Link></li>
+          <li className="border-2 border-gray-400 px-3 rounded-md transition-all duration-300 hover:bg-gray-950 hover:text-white "><Link to={"/register"}>Register</Link></li>
         </ul>
   )
 }
