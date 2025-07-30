@@ -57,22 +57,22 @@ const EventDetailsPage = () => {
   return (
     <Layout>
       
-      <div className="min-h-screen space-y-7 bg-black pt-25 pb-10 px-30 text-white">
+      <div className="min-h-screen space-y-7 bg-black pt-15 px-2    md:pt-25 md:pb-10 md:px-30 text-white">
         <Link to={"/events"}><IoArrowBackCircleOutline size={40} className=" hover:text-yellow-400 transition-all duration-300"/></Link>  
         <div className="space-y-3">
-          <h1 className="text-6xl font-semibold">{event.event_name}</h1>
-          <p className="text-gray-400">{event.event_description}</p>
+          <h1 className="text-2xl md:text-6xl font-semibold">{event.event_name}</h1>
+          <p className="text-gray-400 text-sm md:text-md">{event.event_description}</p>
         </div>
         <div className="space-y-3">
-          <h1 className="text-3xl font-semibold">Discription</h1>
-          <p className="text-gray-300">{event.full_description}</p>
+          <h1 className="text-xl md:text-3xl font-semibold">Discription</h1>
+          <p className="text-gray-300 text-sm md:text-md">{event.full_description}</p>
         </div>
         <div className="space-y-3">
-          <h1 className="text-3xl font-semibold">Rules and Guidelines</h1>
-          <p className="text-gray-300">{event.rules}</p>
+          <h1 className="text-xl md:text-3xl font-semibold">Rules and Guidelines</h1>
+          <p className="text-gray-300 text-sm md:text-md">{event.rules}</p>
         </div>
 
-        <Link to={'/coardinators'} className="border-2 bottom-10 border-yellow-400 px-4 py-3 hover:bg-yellow-400 hover:text-black transition-all rounded-md duration-300">
+        <Link to={'/coardinators'} className="border-2 bottom-10 border-yellow-400 px-2 py-2 md:px-4 md:py-3 hover:bg-yellow-400 hover:text-black transition-all rounded-md duration-300">
           Contact Coardinator
         </Link>
       </div>

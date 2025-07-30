@@ -16,10 +16,10 @@ const technicalEvents = [
 const RegisterPage = () => {
   return (
     <Layout>
-      <div className="min-h-screen text-white bg-black pt-25 pb-10 px-60">
+      <div className="min-h-screen text-white bg-black pt-17 px-3 md:pt-25 pb-6 md:pb-10 md:px-60">
         <div className="space-y-3 ">
-          <h1 className="text-5xl  font-semibold">Registration</h1>
-          <p className="text-gray-400">
+          <h1 className="text-2xl md:text-5xl  font-semibold">Registration</h1>
+          <p className="text-gray-400 text-sm ms:text-md">
             Register for Tech Symposium and participate in exciting technical
             and non-tecnical events.
           </p>
@@ -35,7 +35,7 @@ const RegisterPage = () => {
         <Options label="How did you know about the event?" options={know} />
         <Options label="Food Preferences" options={food} />
         <Options label="Gender" options={gender} />
-        <button className="w-1/2 bg-blue-400 py-2 rounded-lg hover:bg-blue-600 transition-all duration-300">Submit Registration</button>
+        <button className="md:w-1/2 bg-blue-400 md:py-2  md:px-0 px-3  py-2 rounded-lg hover:bg-blue-600 transition-all duration-300">Submit Registration</button>
       </div>
     </Layout>
   );

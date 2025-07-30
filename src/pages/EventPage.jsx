@@ -42,7 +42,7 @@ const techEventDetails = [
     image: "/images/event-card-1.png",
     event_name: "Paper Presentation",
     event_discription:
-      "Discover an exciting lineup of Technical and Non-Technical events. Participate, compete, and connect with peers and industry experts.",
+    "Discover an exciting lineup of Technical and Non-Technical events. Participate, compete, and connect with peers and industry experts.",
   },
 ];
 
@@ -50,12 +50,12 @@ const techEventDetails = [
 const EventPage = () => {
   return (
     <Layout>
-      <div className="min-h-screen bg-black pt-25 pb-10 px-20 text-white">
+      <div className="min-h-screen bg-black pt-23 px-2 md:pt-25 P`pb-10 md:px-20 text-white">
         <div className="space-y-4">
-          <h1 className="text-center text-5xl font-semibold  ">
+          <h1 className="text-center text-2xl md:text-5xl font-semibold  ">
             Symposium Events Lineup
           </h1>
-          <p className="text-center text-gray-400">
+          <p className="text-center text-sm md:text-md text-gray-400">
             Engage in thrilling technical and fun non-technical events crafted
             for every enthusiast.
           </p>

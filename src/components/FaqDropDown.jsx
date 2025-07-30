@@ -30,20 +30,20 @@ const FaqDropDown = ({ title }) => {
 
   return (
     <div className="my-10">
-      <h1 className="text-3xl font-semibold">{title}</h1>
+      <h1 className="text-xl md:text-3xl font-semibold">{title}</h1>
 
   
         {faqs.map((faq, index) => {
           return (
             <div className="mt-5" key={index}>
-              <div onClick={()=>{handleClick(index)}} className="  flex flex-col justify-between p-4 space-y-4 w-full bg-gray-800  rounded-md">
+              <div onClick={()=>{handleClick(index)}} className="  flex flex-col justify-between p-2 md:p-4 space-y-4 w-full bg-gray-800  rounded-md">
                 <div  className="flex justify-between  ">
-                  <h1 className="text-lg font-semibold ">{faq.question}</h1>
+                  <h1 className="text-sm md:text-lg font-semibold ">{faq.question}</h1>
                   {openIndex == index ? <FaChevronDown size={20} /> : <FaChevronUp size={20} />  }
                   
                   
                 </div>
-                {openIndex == index && <div className="text-gray-400">{faq.answer}</div>}
+                {openIndex == index && <div className="text-gray-400 text-sm">{faq.answer}</div>}
               </div>
             </div>
           );
