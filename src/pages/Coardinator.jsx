@@ -52,8 +52,8 @@ const nonTech = [
 const Coardinator = () => {
   return (
     <Layout>
-      <div className="min-h-screen bg-black pt-25 pb-10 px-60">
-        <h1 className="text-white font-bold text-7xl">Coardinators</h1>
+      <div className="min-h-screen bg-black pt-15 px-2 md:pt-25 pb-10 md:px-60">
+        <h1 className="text-white font-bold text-2xl md:text-7xl">Coardinators</h1>
         <Table title="Overall" tableDatas={overall} overallCoardinator />
         <Table title="Technical Events" tableDatas={tech} />
         <Table title="Non-Technical Events" tableDatas={nonTech} />

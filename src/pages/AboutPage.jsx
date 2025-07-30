@@ -6,19 +6,19 @@ const AboutPage = () => {
   return (
     <Layout>
       <div className="relative min-h-screen bg-black text-white">
-        <div className="flex flex-col w-full items-center gap-4 justify-center ">
+        <div className="flex pt-13  md:pt-0 flex-col w-full items-center gap-4 justify-center ">
           <div className="relative">
             <img className=" rounded-md  " src="/images/about-bg.jpg" alt="" />
             <div className="absolute inset-0 bg-black/50"></div>
-            <h1 className="absolute text-9xl text-white/40 flex justify-center w-full bottom-120">
+            <h1 className="absolute lg:text-9xl text-white/40 flex justify-center w-full bottom-30 text-3xl md:bottom-120">
               Our CSE Family
             </h1>
           </div>
         </div>
-        <div className="p-10 space-y-6">
+        <div className="md:p-10 p-4 space-y-6">
           <div className=" space-y-5">
-            <h1 className="text-3xl font-semibold">Our Vision</h1>
-            <p>
+            <h1 className="text-xl md:text-3xl font-semibold">Our Vision</h1>
+            <p className="text-sm md:text-md">
               The department aims to enlighten rural students by providing them
               with access to quality technical education that fosters societal
               development and encourages entrepreneurship. In addition, it is
@@ -27,8 +27,8 @@ const AboutPage = () => {
             </p>
           </div>
           <div className=" space-y-5 ">
-            <h1 className="text-3xl font-semibold">Our Mission</h1>
-            <p>
+            <h1 className="text-xl md:text-3xl font-semibold">Our Mission</h1>
+            <p className="text-sm md:text-md">
               The department strives to build competent Computer Engineers
               equipped with strong professional ethics and entrepreneurial
               skills. It focuses on inculcating problem-solving abilities and
@@ -40,16 +40,16 @@ const AboutPage = () => {
             </p>
           </div>
         </div>
-        <div className="p-10 flex justify-center items-center">
-          <div className="relative w-3/4 h-150 rounded-md flex gap-2 overflow-hidden">
-            <div className="w-1/3 h-full">
+        <div className="md:p-10 p-4 flex justify-center items-center">
+          <div className="relative md:w-3/4 md:h-150 rounded-md flex gap-1 md:gap-2 overflow-hidden">
+            <div className="w-1/3 md:h-full">
               <img
                 src="/images/about-card-1.jpg"
                 className="object-cover h-full"
                 alt=""
               />
             </div>
-            <div className=" w-2/3 h-full  flex flex-col gap-2 ">
+            <div className=" w-2/3 h-full  flex flex-col gap-1 md:gap-2 ">
               <div className="h-1/2   flex items-center justify-center overflow-hidden">
                 <img
                   src="/images/about-card-2.jpg"
@@ -67,9 +67,9 @@ const AboutPage = () => {
             </div>
           </div>
         </div>
-        <div className="p-10 space-y-6">
-          <h1 className="text-3xl font-semibold">Organizers</h1>
-          <p>
+        <div className="md:p-10 p-4 space-y-6">
+          <h1 className="text-xl md:text-3xl font-semibold">Organizers</h1>
+          <p className="text-sm md:text-md">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit Lorem ipsum
             dolor sit, amet consectetur adipisicing elit. Obcaecati, consequatur
             nemo! Recusandae repellat quaerat aut. Iure eligendi rem, nesciunt
@@ -83,13 +83,13 @@ const AboutPage = () => {
             ratione neque ab tempore?
           </p>
 
-          <div className="flex items-center justify-center space-x-16">
+          <div className="flex items-center justify-center space-x-3 md:space-x-16">
             <OrganizerCard image="/images/abdul.jpeg" name="Abdul Rahman A" role="Student Coardinator"/>
             <OrganizerCard image="/images/suji.png" name="Suji Andreas" role="Staff Coardinator"/>
             <OrganizerCard image="/images/keerthika.jpg" name="Keerthika K" role="Student Coardinator"/>
           </div>
         </div>
-        <div className="p-10">
+        <div className="md:p-10 p-4">
           <AboutContact/>
         </div>
       </div>

@@ -4,7 +4,7 @@ import { FaLinkedin } from "react-icons/fa";
 const Footer = () => {
   return (
     // Remove fixed and z-index. Use styling to center text and add padding/margin.
-    <div className='flex flex-col gap-2 justify-between px-3 md:px-10 items-center w-full bg-gray-800 text-white py-4  '> {/* Added background, padding, margin, text-center */}
+    <div className='flex flex-col gap-2 justify-between px-3 md:px-10 items-center w-full  bg-gray-800 text-white py-4  '> {/* Added background, padding, margin, text-center */}
       <p className="text-sm">Design & Developed By Abdul Rahman</p>
       <div className="flex gap-4">
         <a className="hover:text-yellow-400 transition-all duration-300 ease-in-out" href="https://github.com/AbdulCodeCraft" target="_blank"><FaGithub size={30}/></a>
