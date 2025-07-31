@@ -34,7 +34,7 @@ const CoordinatorSchema = new mongoose.Schema(
       },
       trim: true,
     },
-    eventname: {
+    eventName: {
       type: String,
       required: function () {
         return this.type === "technical" || this.type === "non-technical";

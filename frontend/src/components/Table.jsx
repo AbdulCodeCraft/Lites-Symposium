@@ -19,8 +19,8 @@ const Table = (props) => {
             {props.tableDatas.map((item) => {
               return (
                 <tr>
-                  <td className={tdStyle}>{props.overallCoardinator ? item.coardinator_name : item.event_name}</td>
-                  <td className={tdStyle}>{props.overallCoardinator ? item.contact_number : item.coardinator_name}</td>
+                  <td className={tdStyle}>{props.overallCoardinator ? item.Coordinator_name : item.event_name}</td>
+                  <td className={tdStyle}>{props.overallCoardinator ? item.contact_number : item.Coordinator_name}</td>
                   <td className={tdStyle}>{props.overallCoardinator ? item.role : item.contact_number}</td>
                 </tr>
               );

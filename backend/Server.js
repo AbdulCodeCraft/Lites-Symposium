@@ -1,5 +1,6 @@
 const express = require("express");
 require('dotenv').config();
+const cors = require('cors');
 const connectDB = require('./config/db.js')
 const CoordinatorRoutes = require('./routes/CoordinatorRoutes.js')
 
@@ -7,6 +8,8 @@ const CoordinatorRoutes = require('./routes/CoordinatorRoutes.js')
 const app = express();
 
 connectDB();  
+
+app.use(cors())
 
 app.get("/", (req, res) => {
   res.send('<h1>Server Stated</h1>')
