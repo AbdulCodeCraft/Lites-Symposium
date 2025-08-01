@@ -1,5 +1,4 @@
-import Input from '../components/Input'
-import Loading from '../components/Loading'
+
 import Layout from '../layout/Layout'
 
 const AdminLogin = () => {

@@ -17,11 +17,7 @@ const techEventDetails = [
       "Plagiarism will lead to disqualification.",
       "Bring your college ID card.",
     ],
-    coordinator: {
-      name: "John Doe",
-      phone: "9876543210",
-      email: "john@example.com",
-    },
+    
   },
   {
     id: 2,
@@ -36,11 +32,7 @@ const techEventDetails = [
       "Use of external resources is not allowed.",
       "Top 3 with the highest score win.",
     ],
-    coordinator: {
-      name: "Jane Smith",
-      phone: "9876501234",
-      email: "jane@example.com",
-    },
+    
   },
 ];
 

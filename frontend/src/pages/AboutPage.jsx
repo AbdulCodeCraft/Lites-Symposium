@@ -18,7 +18,7 @@ const AboutPage = () => {
         <div className="md:p-10 p-4 space-y-6">
           <div className=" space-y-5">
             <h1 className="text-xl md:text-3xl font-semibold">Our Vision</h1>
-            <p className="text-sm md:text-md">
+            <p className="text-sm md:text-lg">
               The department aims to enlighten rural students by providing them
               with access to quality technical education that fosters societal
               development and encourages entrepreneurship. In addition, it is
@@ -28,7 +28,7 @@ const AboutPage = () => {
           </div>
           <div className=" space-y-5 ">
             <h1 className="text-xl md:text-3xl font-semibold">Our Mission</h1>
-            <p className="text-sm md:text-md">
+            <p className="text-sm md:text-lg">
               The department strives to build competent Computer Engineers
               equipped with strong professional ethics and entrepreneurial
               skills. It focuses on inculcating problem-solving abilities and
@@ -69,7 +69,7 @@ const AboutPage = () => {
         </div>
         <div className="md:p-10 p-4 space-y-6">
           <h1 className="text-xl md:text-3xl font-semibold">Organizers</h1>
-          <p className="text-sm md:text-md">
+          <p className="text-sm md:text-lg">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit Lorem ipsum
             dolor sit, amet consectetur adipisicing elit. Obcaecati, consequatur
             nemo! Recusandae repellat quaerat aut. Iure eligendi rem, nesciunt
