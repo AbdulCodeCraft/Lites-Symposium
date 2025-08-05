@@ -32,7 +32,7 @@ const getCoordinators = async (req, res) => {
       success: true,
       overall: overall,
       technicalEvents: technicalEvents,
-      nonTechnicalEvents: nonTechnicalEvents, // Use the corrected variable name
+      nonTechnicalEvents: nonTechnicalEvents, 
     });
   } catch (error) {
     console.error(error.message);

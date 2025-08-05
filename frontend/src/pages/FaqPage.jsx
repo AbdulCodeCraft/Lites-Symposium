@@ -1,15 +1,10 @@
-import { useState } from "react";
 import FaqDropDown from "../components/FaqDropDown";
 import Layout from "../layout/Layout";
 
 
 
 const FaqPage = () => {
-  const [openIndex,setOpenIndex] = useState(null);
-
-  const toggle = (index) =>{
-    setOpenIndex()
-  }
+  
   return (
     <div>
       <Layout>
