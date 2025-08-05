@@ -1,53 +1,50 @@
+import { useEffect, useState } from "react";
 import EventCard from "../components/EventCard";
 import Layout from "../layout/Layout";
+import axios from "axios";
 
-const techEventDetails = [
-  {
-    id: 1,
-    image: "/images/event-card-1.png",
-    event_name: "Paper Presentation",
-    event_discription:
-      "Discover an exciting lineup of Technical and Non-Technical events. Participate, compete, and connect with peers and industry experts.",
-  },
-  {
-    id: 2,
-    image: "/images/event-card-3.png",
-    event_name: "Paper Presentation",
-    event_discription:
-      "Discover an exciting lineup of Technical and Non-Technical events. Participate, compete, and connect with peers and industry experts.",
-  },
-  {
-    id: 3,
-    image: "/images/event-card-1.png",
-    event_name: "Paper Presentation",
-    event_discription:
-      "Discover an exciting lineup of Technical and Non-Technical events. Participate, compete, and connect with peers and industry experts.",
-  },
-  {
-    id: 4,
-    image: "/images/event-card-1.png",
-    event_name: "Paper Presentation",
-    event_discription:
-      "Discover an exciting lineup of Technical and Non-Technical events. Participate, compete, and connect with peers and industry experts.",
-  },
-  {
-    id: 5,
-    image: "/images/event-card-1.png",
-    event_name: "Paper Presentation",
-    event_discription:
-      "Discover an exciting lineup of Technical and Non-Technical events. Participate, compete, and connect with peers and industry experts.",
-  },
-  {
-    id: 6,
-    image: "/images/event-card-1.png",
-    event_name: "Paper Presentation",
-    event_discription:
-    "Discover an exciting lineup of Technical and Non-Technical events. Participate, compete, and connect with peers and industry experts.",
-  },
-];
+// const techEventDetails = [
+//   {
+//     id: 1,
+//     image: "/images/event-card-1.png",
+//     event_name: "Paper Presentation",
+//     event_discription:
+//       "Discover an exciting lineup of Technical and Non-Technical events. Participate, compete, and connect with peers and industry experts.",
+//   },
 
+// ];'
 
 const EventPage = () => {
+  const [technicalEvents, setTechnicalEvents] = useState([]);
+  const [nonTechnicalEvents, setNonTechnicalEvents] = useState([]);
+  const [error, setError] = useState(null);
+
+  const API_URL = "http://localhost:3000/api/events";
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await axios.get(API_URL);
+        const data =  response.data;
+        
+        if (data.success) {
+          setNonTechnicalEvents(data.nonTechnicalEvents);
+          setTechnicalEvents(data.technicalEvents);
+        } else {
+          throw new error(data.error);
+        }
+      } catch (error) {
+        setError(error.response.data);
+        console.log(`Error Response ${error.response.data}`);
+        console.log(`Error Status ${error.response.status}`);
+        setError(error.request.data);
+      }
+    };
+    fetchEvents();
+  }, []);
+
+ 
+
   return (
     <Layout>
       <div className="min-h-screen bg-black pt-23 px-2 md:pt-25 P`pb-10 md:px-20 text-white">
@@ -60,8 +57,8 @@ const EventPage = () => {
             for every enthusiast.
           </p>
         </div>
-        <EventCard title="Technical Events" events={techEventDetails}/>
-        <EventCard title="Non-Technical Events" events={techEventDetails}/>
+        <EventCard title="Technical Events" events={technicalEvents} />
+        <EventCard title="Non-Technical Events" events={nonTechnicalEvents} />
       </div>
     </Layout>
   );
