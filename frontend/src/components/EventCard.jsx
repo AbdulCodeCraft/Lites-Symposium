@@ -13,7 +13,7 @@ const EventCard = ({ title, events }) => {
             >
               <img
                 className="h-3/4 group-hover:scale-105 transition-transform duration-300 object-cover rounded-lg w-full"
-                src={event  .image}
+                src={event.image}
                 alt=""
               />
               <div className="absolute inset-0  transition-opacity duration-300 rounded-lg group-hover:bg-black/50">
