@@ -5,7 +5,7 @@ const getFaq = async (req, res) => {
     const allFaq = await Faq.find({});
 
     const registration = allFaq
-      .filter((c) => c.type === "Registration")
+      .filter((c) => c.type === "registration")
       .map((c) => ({
         question: c.question,
         answer: c.answer,

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaChevronDown,FaChevronUp} from "react-icons/fa";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const faqs = [
   {
@@ -18,38 +18,49 @@ const faqs = [
   },
 ];
 
-const FaqDropDown = ({ title }) => {
+const FaqDropDown = ({ title ,events}) => {
+  
+
   if (faqs.length === 0) {
     return <div>No Items Availble</div>;
   }
   const [openIndex, setOpenIndex] = useState();
 
   const handleClick = (index) => {
-    setOpenIndex(openIndex == index ? null : index)
+    setOpenIndex(openIndex == index ? null : index);
   };
 
   return (
     <div className="my-10">
       <h1 className="text-xl md:text-3xl font-semibold">{title}</h1>
 
-  
-        {faqs.map((faq, index) => {
-          return (
-            <div className="mt-5" key={index}>
-              <div onClick={()=>{handleClick(index)}} className="  flex flex-col justify-between p-2 md:p-4 space-y-4 w-full bg-gray-800  rounded-md">
-                <div  className="flex justify-between  ">
-                  <h1 className="text-sm md:text-lg font-semibold ">{faq.question}</h1>
-                  {openIndex == index ? <FaChevronDown size={20} /> : <FaChevronUp size={20} />  }
-                  
-                  
-                </div>
-                {openIndex == index && <div className="text-gray-400 text-sm">{faq.answer}</div>}
+      {events.map((event, index) => {
+        return (
+          <div className="mt-5" key={index}>
+            <div
+              onClick={() => {
+                handleClick(index);
+              }}
+              className="  flex flex-col justify-between p-2 md:p-4 space-y-4 w-full bg-gray-800  rounded-md"
+            >
+              <div className="flex justify-between  ">
+                <h1 className="text-sm md:text-lg font-semibold ">
+                  {event.question}
+                </h1>
+                {openIndex == index ? (
+                  <FaChevronDown size={20} />
+                ) : (
+                  <FaChevronUp size={20} />
+                )}
               </div>
+              {openIndex == index && (
+                <div className="text-gray-400 text-sm">{event.answer}</div>
+              )}
             </div>
-          );
-        })}
-      </div>
-
+          </div>
+        );
+      })}
+    </div>
   );
 };
 

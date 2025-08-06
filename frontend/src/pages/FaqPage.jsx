@@ -1,22 +1,54 @@
 import FaqDropDown from "../components/FaqDropDown";
 import Layout from "../layout/Layout";
-
-
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const FaqPage = () => {
-  
+  const [faq, setFaq] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const API_URL = "http://localhost:3000/api/faq";
+  useEffect(() => {
+    const fetchFaq = async () => {
+      try {
+        const respose = await axios.get(API_URL);
+        const data = respose.data;
+
+        if (data.success) {
+          setLoading(false);
+          setFaq(data);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchFaq();
+  }, []);
+
+  console.log(faq);
+
   return (
     <div>
       <Layout>
-        <div className="min-h-screen bg-black pt-15 px-2 md:pt-25 text-white  pb-2 md:pb-10 md:px-30">
-          <h1 className="md:text-5xl text-2xl font-semibold">Frequently Asked Questions</h1>
-          <FaqDropDown title="Registration"/>
-          <FaqDropDown title="Events"/>
-          <FaqDropDown title="Food And Breverages"/>
-        </div>
+        {loading && (<div>Laoding</div>)}
+
+        {!loading &&
+        (
+          <div className="min-h-screen bg-black pt-15 px-2 md:pt-25 text-white  pb-2 md:pb-10 md:px-30">
+            <h1 className="md:text-5xl text-2xl font-semibold">
+              Frequently Asked Questions
+            </h1>
+            <FaqDropDown title="Registration" events={faq.registration} />
+            <FaqDropDown title="Events" events={faq.events} />
+            <FaqDropDown
+              title="Food And Breverages"
+              events={faq.food_and_breverages}
+            />
+          </div>
+        )}
       </Layout>
     </div>
-  )
-}
+  );
+};
 
-export default FaqPage
+export default FaqPage;
