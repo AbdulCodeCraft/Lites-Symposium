@@ -6,7 +6,7 @@ import axios from "axios";
 const FaqPage = () => {
   const [faq, setFaq] = useState([]);
   const [loading, setLoading] = useState(true);
-  const API_URL = "http://localhost:3000/api/faq";
+  const API_URL = "https://lites-symposium.onrender.com/api/faq";
   useEffect(() => {
     const fetchFaq = async () => {
       try {

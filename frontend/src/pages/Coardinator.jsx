@@ -6,54 +6,6 @@ import { useEffect } from "react";
 import Loading from "../components/Loading.jsx";
 
 
-// const overall = [
-//   {
-//     contact_number: 7448682797,
-//     coardinator_name: "Abdul Rahman",
-//     role: "Student Coardinator",
-//   },
-//   {
-//     contact_number: 7448682797,
-//     coardinator_name: "Abdul Rahman",
-//     role: "Student Coardinator",
-//   },
- 
-// ];
-// const tech = [
-//   {
-//     event_name: "Paper Presentatio",
-//     coardinator_name: "Abdul Rahman",
-//     contact_number: 7448682797,
-//   },
-//   {
-//     event_name: "Paper Presentatio",
-//     coardinator_name: "Abdul Rahman",
-//     contact_number: 7448682797,
-//   },
-//   {
-//     event_name: "Paper Presentatio",
-//     coardinator_name: "Abdul Rahman",
-//     contact_number: 7448682797,
-//   },
-// ];
-// const nonTech = [
-//   {
-//     event_name: "Paper Presentatio",
-//     coardinator_name: "Abdul Rahman",
-//     contact_number: 7448682797,
-//   },
-//   {
-//     event_name: "Paper Presentatio",
-//     coardinator_name: "Abdul Rahman",
-//     contact_number: 7448682797,
-//   },
-//   {
-//     event_name: "Paper Presentatio",
-//     coardinator_name: "Abdul Rahman",
-//     contact_number: 7448682797,
-//   },
-// ];
-
 const Coardinator = () => {
 
   const [overall,setOverall] = useState([]);
@@ -64,7 +16,7 @@ const Coardinator = () => {
   const[error,setError] = useState(null)
 
   useEffect(()=>{
-    const API_URL = "http://localhost:3000/api/coordinators";
+    const API_URL = "https://lites-symposium.onrender.com/api/coordinators";
 
     const fetchCoardinator = async() =>{
       try {

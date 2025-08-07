@@ -3,23 +3,14 @@ import EventCard from "../components/EventCard";
 import Layout from "../layout/Layout";
 import axios from "axios";
 
-// const techEventDetails = [
-//   {
-//     id: 1,
-//     image: "/images/event-card-1.png",
-//     event_name: "Paper Presentation",
-//     event_discription:
-//       "Discover an exciting lineup of Technical and Non-Technical events. Participate, compete, and connect with peers and industry experts.",
-//   },
 
-// ];'
 
 const EventPage = () => {
   const [technicalEvents, setTechnicalEvents] = useState([]);
   const [nonTechnicalEvents, setNonTechnicalEvents] = useState([]);
   const [error, setError] = useState(null);
 
-  const API_URL = "http://localhost:3000/api/events";
+  const API_URL = "https://lites-symposium.onrender.com/api/events";
 
   useEffect(() => {
     const fetchEvents = async () => {
