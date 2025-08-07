@@ -5,7 +5,7 @@ const connectDB = require("./config/db.js");
 const CoordinatorRoutes = require("./routes/CoordinatorRoutes.js");
 const EventRoutes = require("./routes/EventRouter.js");
 const FaqRoutes = require("./routes/FaqRoutes.js");
-const RegistrationRouter = require("./routes/RegistrationRouter.js")
+const RegistrationRouter = require("./routes/RegistrationRouter.js");
 
 const app = express();
 
@@ -20,8 +20,8 @@ app.get("/", (req, res) => {
 
 app.use("/api/coordinators", CoordinatorRoutes);
 app.use("/api/events", EventRoutes);
-app.use("/api/faq",FaqRoutes);
-app.use("/api",RegistrationRouter);
+app.use("/api/faq", FaqRoutes);
+app.use("/api", RegistrationRouter);
 
 const port = 3000;
 
