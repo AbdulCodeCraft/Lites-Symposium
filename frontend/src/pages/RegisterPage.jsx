@@ -4,6 +4,7 @@ import Input from "../components/Input";
 import Options from "../components/Options";
 import Layout from "../layout/Layout";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
 
 const food = ["", "Vegetarian", "Non-Vegetarian"];
 const year = ["", "4th Year", "3rd Year", "2nd Year", "1st Year"];
@@ -38,7 +39,7 @@ const RegisterPage = () => {
   });
 
   const [loading, setLoading] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState({ type: "", text: "" });
+
   const API_URL = "http://localhost:3000/api/register";
 
   const handleChange = (e) => {
@@ -53,17 +54,23 @@ const RegisterPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setSubmitMessage({ type: "", text: "" });
 
     try {
-      console.log(formData)
+      console.log(formData);
       const response = await axios.post(API_URL, formData);
 
       if (response.data.success) {
-        setSubmitMessage({ type: "success", text: response.data.message });
+        toast.success(response.data.message, {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
 
         setFormData({
-         
           fullName: "",
           email: "",
           mobileNumber: "",
@@ -76,11 +83,36 @@ const RegisterPage = () => {
           foodPreferences: "",
           gender: "",
         });
+      } else {
+        toast.error(response.data.error || "Registration failed.", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
       }
     } catch (error) {
-      console.log(error)
-      console.log(`Registration Failed ${error.response?.data}`);
-      setSubmitMessage({ type: "error", text: "Error occured" });
+      console.error(
+        `Registration Failed:`,
+        error.response?.data || error.message
+      );
+
+      const errorMessage =
+        error.response?.data?.error ||
+        "An unexpected error occurred during registration.";
+
+      toast.error(errorMessage, {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     } finally {
       setLoading(false);
     }
@@ -88,6 +120,7 @@ const RegisterPage = () => {
 
   return (
     <Layout>
+      <ToastContainer />
       <div className="min-h-screen text-white bg-black pt-17 px-3 md:pt-25 pb-6 md:pb-10 md:px-60">
         <div className="space-y-3 ">
           <h1 className="text-2xl md:text-5xl  font-semibold">Registration</h1>
@@ -173,14 +206,13 @@ const RegisterPage = () => {
             name="gender"
             value={formData.gender}
             onChange={handleChange}
-            
           />
           <button
             type="submit"
             className="md:w-1/2 bg-blue-400 md:py-2  md:px-0 px-3  py-2 rounded-lg hover:bg-blue-600 transition-all duration-300"
             disabled={loading}
           >
-            {loading ? 'Submitting...' : 'Submit Registration'}
+            {loading ? "Submitting..." : "Submit Registration"}
           </button>
         </form>
       </div>

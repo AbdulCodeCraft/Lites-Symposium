@@ -25,7 +25,7 @@ const CheckList = ({ title, lists, selectedValues, name, onChange }) => {
               value={list}
               checked={selectedValues.includes(list)}
               onChange={handleCheckboxChange}
-              required
+              
             />
             <label>{list}</label>
           </div>
