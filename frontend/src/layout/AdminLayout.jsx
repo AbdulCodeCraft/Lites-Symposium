@@ -10,7 +10,7 @@ const AdminDashboard = () => {
         <div className=" w-1/5 min-h-screen">
         <AdminSideBar/>
         </div>
-        <div className="bg-blue-500 w-4/5 min-h-screen">
+        <div className=" w-4/5 min-h-screen">
         <Outlet/>
         </div>
       </div>
