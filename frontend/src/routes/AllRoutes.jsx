@@ -9,6 +9,7 @@ import FaqPage from "../pages/FaqPage.jsx";
 import RegisterPage from "../pages/RegisterPage.jsx";
 import AdminLogin from "../pages/AdminLogin.jsx";
 import ScrollToTop from "../components/ScrollToTop.jsx"
+import AdminDashboard from "../pages/AdminDashboard.jsx";
 
 
 
@@ -27,7 +28,7 @@ const AllRoutes = () => {
             <Route path="/faq" element={<FaqPage/>}/>
             <Route path="/register" element={<RegisterPage/>}/>
             <Route path="/admin" element={<AdminLogin/>}/>
-            
+            <Route path="/admin-dashboard" element={<AdminDashboard/>}/>
         </Routes>
     </BrowserRouter>
   )
