@@ -1,3 +1,4 @@
+import { useState } from "react";
 import AboutContact from "../components/AboutContact.jsx";
 import OrganizerCard from "../components/OrganizerCard.jsx";
 import Layout from "../layout/Layout.jsx";
@@ -8,7 +9,11 @@ const AboutPage = () => {
       <div className="relative min-h-screen bg-black text-white">
         <div className="flex pt-13  md:pt-0 flex-col w-full items-center gap-4 justify-center ">
           <div className="relative">
-            <img className=" rounded-md  " src="/images/about-bg.jpg" alt="" />
+            <img
+              className=" rounded-md  "
+              src="/images/about-bg.jpg"
+              onLoad={() => setLoading(false)}
+            />
             <div className="absolute inset-0 bg-black/50"></div>
             <h1 className="absolute lg:text-9xl text-white/40 flex justify-center w-full bottom-30 text-3xl md:bottom-120">
               Our CSE Family
@@ -84,13 +89,25 @@ const AboutPage = () => {
           </p>
 
           <div className="flex items-center justify-center space-x-3 md:space-x-16">
-            <OrganizerCard image="/images/abdul.jpeg" name="Abdul Rahman A" role="Student Coardinator"/>
-            <OrganizerCard image="/images/suji.png" name="Suji Andreas" role="Staff Coardinator"/>
-            <OrganizerCard image="/images/keerthika.jpg" name="Keerthika K" role="Student Coardinator"/>
+            <OrganizerCard
+              image="/images/abdul.jpeg"
+              name="Abdul Rahman A"
+              role="Student Coardinator"
+            />
+            <OrganizerCard
+              image="/images/suji.png"
+              name="Suji Andreas"
+              role="Staff Coardinator"
+            />
+            <OrganizerCard
+              image="/images/keerthika.jpg"
+              name="Keerthika K"
+              role="Student Coardinator"
+            />
           </div>
         </div>
         <div className="md:p-10 p-4">
-          <AboutContact/>
+          <AboutContact />
         </div>
       </div>
     </Layout>

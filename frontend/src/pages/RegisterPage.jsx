@@ -40,7 +40,7 @@ const RegisterPage = () => {
 
   const [loading, setLoading] = useState(false);
 
-  const API_URL = "http://localhost:3000/api/register";
+  const API_URL = "https://lites-symposium.onrender.com/api/register";
 
   const handleChange = (e) => {
     const { name, value } = e.target;

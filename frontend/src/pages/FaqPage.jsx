@@ -2,6 +2,7 @@ import FaqDropDown from "../components/FaqDropDown";
 import Layout from "../layout/Layout";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import RingLoader from "react-spinners/RingLoader";
 
 const FaqPage = () => {
   const [faq, setFaq] = useState([]);
@@ -23,14 +24,18 @@ const FaqPage = () => {
     };
 
     fetchFaq();
-  }, []);
+  }, []); 
 
   console.log(faq);
 
   return (
     <div>
       <Layout>
-        {loading && (<div>Laoding</div>)}
+         {loading && (
+         <div className="flex bg-black justify-center items-center min-h-screen">
+          <RingLoader size={150} color="#FFFF" />
+        </div>
+      )}
 
         {!loading &&
         (

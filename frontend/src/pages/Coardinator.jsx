@@ -3,7 +3,8 @@ import Table from "../components/Table.jsx";
 import Layout from "../layout/Layout.jsx";
 import axios from 'axios';
 import { useEffect } from "react";
-import Loading from "../components/Loading.jsx";
+import RingLoader from "react-spinners/RingLoader";
+
 
 
 const Coardinator = () => {
@@ -46,20 +47,19 @@ const Coardinator = () => {
   return (
     <Layout>
       {loading && (
-        <div>
-          <Loading/>
+         <div className="flex bg-black justify-center items-center min-h-screen">
+          <RingLoader size={150} color="#FFFF" />
         </div>
       )}
      {error && (
         <div className="min-h-screen">
-
           {error}
         </div>
       )
      }
       
       
-      {!error && <div className="min-h-screen bg-black pt-15 px-2 md:pt-25 pb-10 md:px-60">
+      {!loading && !error && <div className="min-h-screen bg-black pt-15 px-2 md:pt-25 pb-10 md:px-60">
         <h1 className="text-white font-bold text-2xl md:text-7xl">Coardinators</h1>
         <Table title="Overall" tableDatas={overall} overallCoardinator />
         <Table title="Technical Events" tableDatas={technicalEvents} />
