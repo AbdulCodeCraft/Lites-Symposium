@@ -1,18 +1,25 @@
 import Layout from "../layout/Layout";
-import {
-  signInWithCredential,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { ToastContainer, toast } from "react-toastify";
 import { auth } from "../Firebase";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const AdminLogin = () => {
-  const navigator = useNavigate();
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        navigate("/admin", { replace: true });
+      }
+    });
+
+    return () => unsubscribe();
+  }, [navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,7 +30,7 @@ const AdminLogin = () => {
         email,
         password
       );
-      const user = userCredential.user;
+     
       toast.success("Admin login successful! Redirecting...", {
         position: "top-center",
         autoClose: 3000,
@@ -33,10 +40,14 @@ const AdminLogin = () => {
         draggable: true,
         progress: undefined,
       });
+      const user = userCredential.user.email;
+      console.log(user);
 
-      console.log(`Admin logged in ${user.email}`);
-      navigator("/home");
-      //route set pannanum
+    
+
+      setTimeout(() => {
+        navigate("/admin-dashboard", { replace: true }); 
+      }, 1000);
     } catch (error) {
       console.error(`Admin Login Error : ${error.code} ${error.message}`);
       let errorMessage = "Login failed. Please check your credentials.";
@@ -53,7 +64,7 @@ const AdminLogin = () => {
 
       toast.error(errorMessage, {
         position: "top-center",
-        autoClose: 5000, // Keep error messages visible a bit longer
+        autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -67,7 +78,7 @@ const AdminLogin = () => {
   return (
     <Layout>
       <ToastContainer />
-      <div className="min-h-screen  flex justify-center items-center bg-black text-white">
+      <div className="min-h-screen flex justify-center items-center bg-black text-white">
         <form
           onSubmit={handleSubmit}
           className="flex flex-col space-y-4 justify-center items-center bg-gray-800 md:h-100 p-5 md:p-0 rounded-lg md:w-1/2 "
@@ -78,7 +89,7 @@ const AdminLogin = () => {
 
           <input
             className="px-3 py-3 bg-gray-600 rounded-lg md:w-1/2"
-            type="text"
+            type="email" 
             name="email"
             value={email}
             onChange={(e) => {
@@ -89,7 +100,7 @@ const AdminLogin = () => {
           />
           <input
             className="px-3 py-3 bg-gray-600 rounded-lg md:w-1/2"
-            type="text"
+            type="password" 
             placeholder="Enter Password"
             name="password"
             value={password}
@@ -99,6 +110,7 @@ const AdminLogin = () => {
             required
           />
           <button
+            type="submit"
             className="bg-blue-400 px-8 rounded-lg hover:bg-blue-500 py-2"
             disabled={loading}
           >

@@ -11,11 +11,11 @@ const Sidebar = () => {
   const [activeItem, setActiveItem] = useState("Users"); 
 
   const menuItems = [
-    { label: "Users", icon: <FaUsers />, path: "/admin-dashboard/users" },
-    { label: "Coordinators", icon: <PiUsersThree />, path: "/admin-dashboard/coordinators" },
-    { label: "Events", icon: <LuCalendarDays />, path: "/admin-dashboard/events" },
-    { label: "FAQs", icon: <FaRegQuestionCircle />, path: "/admin-dashboard/faqs" },
-    { label: "Logout", icon: <LuLogOut />, path: "/admin-dashboard/logout" },
+    { label: "Users", icon: <FaUsers />, path: "users" },
+    { label: "Coordinators", icon: <PiUsersThree />, path: "coordinators" },
+    { label: "Events", icon: <LuCalendarDays />, path: "events" },
+    { label: "FAQs", icon: <FaRegQuestionCircle />, path: "faqs" },
+    { label: "Logout", icon: <LuLogOut />, path: "logout" },
   ];
 
   const handleClick = (item) => {

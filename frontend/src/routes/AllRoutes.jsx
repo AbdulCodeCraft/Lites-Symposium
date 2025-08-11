@@ -13,11 +13,12 @@ import ScrollToTop from "../components/ScrollToTop.jsx";
 import AdminLayout from "../layout/AdminLayout.jsx";
 
 //below imports all belong to admin page
-import Users from "../pages/admin/Users.jsx"
-import Coordinator from "../pages/admin/Coordinator.jsx"
-import Events from "../pages/admin/Events.jsx"
-import FAQs from "../pages/admin/FAQs.jsx"
-import Logout from "../pages/admin/Logout.jsx"
+import Users from "../pages/admin/Users.jsx";
+import Coordinator from "../pages/admin/Coordinator.jsx";
+import Events from "../pages/admin/Events.jsx";
+import FAQs from "../pages/admin/FAQs.jsx";
+import Logout from "../pages/admin/Logout.jsx";
+import ProtectRoutes from "./ProtectRoutes.jsx";
 
 const AllRoutes = () => {
   return (
@@ -32,16 +33,19 @@ const AllRoutes = () => {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/faq" element={<FaqPage />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/admin" element={<AdminLogin />} />
-        {/* <Route path="/admin-dashboard" element={<AdminDashboard />} /> */}
+        <Route path="/admin/login" element={<AdminLogin />} />
 
         {/* Admin Page Routes */}
-        <Route path="/admin-dashboard" element={<AdminLayout />}>
-          <Route path="users" element={<Users/>}/>
-          <Route path="coordinators" element={<Coordinator />} />
-          <Route path="events" element={<Events />} />
-          <Route path="faqs" element={<FAQs />} />
-          <Route path="logout" element={<Logout />} />
+
+        <Route path="/admin" element={<ProtectRoutes />}>
+          <Route element={<AdminLayout />}>
+            <Route index element={<Users />} />
+            <Route path="users" element={<Users />} />
+            <Route path="coordinators" element={<Coordinator />} />
+            <Route path="events" element={<Events />} />
+            <Route path="faqs" element={<FAQs />} />
+            <Route path="logout" element={<Logout />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>

@@ -9,7 +9,7 @@ const NavList = () => {
           <li className={listStyle}><Link to={"/coardinators"}>Coardinators</Link></li>
           <li className={listStyle}><Link to={"/events"}>Events</Link></li>
           <li className={listStyle}><Link to={"/faq"}>FAQ's</Link></li>
-          <li className={listStyle}><Link to={"/admin"}>Admin</Link></li>
+          <li className={listStyle}><Link to={"/admin/login"}>Admin</Link></li>
           <li className="border-2 border-gray-400 px-3 rounded-md  transition-all duration-300 hover:bg-gray-950 hover:text-white "><Link to={"/register"}>Register</Link></li>
         </ul>
   )

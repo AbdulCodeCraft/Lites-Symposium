@@ -1,6 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../Firebase";
+import { Navigate, Outlet } from "react-router-dom";
+import Layout from "../layout/Layout";
 
 const ProtectRoutes = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -15,8 +17,10 @@ const ProtectRoutes = () => {
       }
       setLoading(false);
     });
+
     return () => unsubscribe();
   }, []);
+
   if (loading) {
     return (
       <Layout>
@@ -26,6 +30,7 @@ const ProtectRoutes = () => {
       </Layout>
     );
   }
+
   return isAuthenticated ? <Outlet /> : <Navigate to="/admin/login" replace />;
 };
 
