@@ -19,6 +19,7 @@ import Events from "../pages/admin/Events.jsx";
 import FAQs from "../pages/admin/FAQs.jsx";
 import Logout from "../pages/admin/Logout.jsx";
 import ProtectRoutes from "./ProtectRoutes.jsx";
+import UserDetails from "../pages/admin/UserDetails.jsx";
 
 const AllRoutes = () => {
   return (
@@ -45,6 +46,7 @@ const AllRoutes = () => {
             <Route path="events" element={<Events />} />
             <Route path="faqs" element={<FAQs />} />
             <Route path="logout" element={<Logout />} />
+            <Route path="user/details" element={<UserDetails/>}/>
           </Route>
         </Route>
       </Routes>

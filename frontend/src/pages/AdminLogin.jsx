@@ -46,7 +46,7 @@ const AdminLogin = () => {
     
 
       setTimeout(() => {
-        navigate("/admin-dashboard", { replace: true }); 
+        navigate("/admin", { replace: true }); 
       }, 1000);
     } catch (error) {
       console.error(`Admin Login Error : ${error.code} ${error.message}`);
