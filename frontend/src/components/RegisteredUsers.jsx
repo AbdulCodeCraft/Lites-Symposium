@@ -1,11 +1,12 @@
-import {Link, useNavigate} from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom";
+
 const RegisteredUsers = ({ users }) => {
   const navigate = useNavigate();
-  
+
   return (
-    <div className=" overflow-hidden overflow-y-auto rounded-lg border border-gray-700 h-110 w-full">
+    <div className="overflow-hidden overflow-y-auto rounded-lg border border-gray-700 h-110 w-full">
       <table className="w-full border border-collapse">
-        <thead className="sticky top-0  bg-gray-700 h-12">
+        <thead className="sticky top-0 bg-gray-700 h-12">
           <tr>
             <th>User Name</th>
             <th>E-mail</th>
@@ -13,14 +14,28 @@ const RegisteredUsers = ({ users }) => {
             <th>Actions</th>
           </tr>
         </thead>
-        <tbody className="text-center space-y-2 ">
-          {users.map((user, index) => (
-            <tr onClick={()=>navigate('/admin/user/details')} className="border-b border-gray-700" index>
+        <tbody className="text-center">
+          {users.map((user) => (
+            <tr
+              key={user._id}
+              onClick={() => navigate(`/admin/user/details/${user._id}`)}
+              className="border-b border-gray-700 cursor-pointer"
+            >
               <td className="py-5">{user.fullName}</td>
               <td>{user.email}</td>
-              <td>{user.createdAt}</td>
-              <td>
-                <Link className="bg-blue-500 px-2 py-1    rounded-md  cursor-pointer" to={'/logout'}>Edit</Link> <span>/</span> <button className="bg-red-500 px-2  rounded-md  cursor-pointer">Delete</button>
+              <td>{new Date(user.createdAt).toLocaleDateString()}</td>
+            
+              <td className="space-x-3">
+                <Link
+                  className="bg-blue-500 px-2 py-1 rounded-md cursor-pointer"
+                  to={`/admin/user/edit/${user._id}`}
+                >
+                  Edit
+                </Link>
+                
+                <button className="bg-red-500 px-2 rounded-md cursor-pointer">
+                  Delete
+                </button>
               </td>
             </tr>
           ))}

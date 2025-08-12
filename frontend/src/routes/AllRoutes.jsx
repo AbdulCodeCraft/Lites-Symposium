@@ -36,7 +36,7 @@ const AllRoutes = () => {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/admin/login" element={<AdminLogin />} />
 
-        {/* Admin Page Routes */}
+        {/* Admin Routes */}
 
         <Route path="/admin" element={<ProtectRoutes />}>
           <Route element={<AdminLayout />}>
@@ -46,7 +46,7 @@ const AllRoutes = () => {
             <Route path="events" element={<Events />} />
             <Route path="faqs" element={<FAQs />} />
             <Route path="logout" element={<Logout />} />
-            <Route path="user/details" element={<UserDetails/>}/>
+            <Route path="user/details/:id" element={<UserDetails/>}/>
           </Route>
         </Route>
       </Routes>
