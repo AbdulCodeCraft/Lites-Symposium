@@ -46,13 +46,13 @@ const UserDetails = () => {
         </Link>
       </div>
 
-      {/* Name & Role */}
+     
       <div>
         <h1 className="text-2xl font-semibold">{user.fullName}</h1>
         <p className="text-sm text-gray-500 font-semibold">Registered User</p>
       </div>
 
-      {/* Sections */}
+     
       <UserDetailsSections
         heading="Personal Information"
         data={[

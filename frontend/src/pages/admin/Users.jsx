@@ -3,11 +3,12 @@ import axios from "axios";
 import Dropdown from "../../components/Dropdown.jsx";
 import RegisteredUsers from "../../components/RegisteredUsers.jsx";
 
-const Role = ["coordinator", "participant"];
+const registration = ["Newest First", "Oldest First"];
 
 const Users = () => {
   const [userDetails, setUserDetails] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [filter, setFilter] = useState(registration[0]);
   const API_URL = "http://localhost:3000/api/user";
 
   useEffect(() => {
@@ -28,6 +29,18 @@ const Users = () => {
     fetchUsers();
   }, []);
 
+  const handleFilterChange = (selectedValue) => {
+    setFilter(selectedValue);
+  };
+
+  const sortedUsers = [...userDetails].sort((a, b) => {
+    if (filter === "Newest First") {
+      return new Date(b.createdAt) - new Date(a.createdAt);
+    } else {
+      return new Date(a.createdAt) - new Date(b.createdAt);
+    }
+  });
+
   if (loading) {
     return <p>Loading users...</p>;
   }
@@ -37,13 +50,16 @@ const Users = () => {
       <h1 className="text-4xl font-semibold">Registered User</h1>
 
       <div className="flex space-x-6">
-        <Dropdown label="Role" options={Role} />
-        <Dropdown label="Role" options={Role} />
-        <Dropdown label="Role" options={Role} />
+        <Dropdown
+          label="Filter By Registration"
+          value={filter}
+          options={registration}
+          onChange={(e) => handleFilterChange(e.target.value)}
+        />
       </div>
 
       <div>
-        <RegisteredUsers users={userDetails} />
+        <RegisteredUsers users={sortedUsers} />
       </div>
     </div>
   );

@@ -18,21 +18,20 @@ const RegisteredUsers = ({ users }) => {
           {users.map((user) => (
             <tr
               key={user._id}
-              onClick={() => navigate(`/admin/user/details/${user._id}`)}
-              className="border-b border-gray-700 cursor-pointer"
+              className="border-b border-gray-700 "
             >
               <td className="py-5">{user.fullName}</td>
               <td>{user.email}</td>
               <td>{new Date(user.createdAt).toLocaleDateString()}</td>
-            
+
               <td className="space-x-3">
                 <Link
                   className="bg-blue-500 px-2 py-1 rounded-md cursor-pointer"
-                  to={`/admin/user/edit/${user._id}`}
+                  to={`/admin/user/details/${user._id}`}
                 >
-                  Edit
+                  View
                 </Link>
-                
+
                 <button className="bg-red-500 px-2 rounded-md cursor-pointer">
                   Delete
                 </button>

@@ -3,7 +3,8 @@ import { RiExpandUpDownLine } from "react-icons/ri";
 const Dropdown = ({ options, value, name, onChange ,label}) => {
   return (
     <div className="relative w-fit space-x-2">
-        <label htmlFor="">{label}</label>
+        <label className="mr-2">{label}</label>
+
       <select
         required
         name={name}
@@ -11,9 +12,6 @@ const Dropdown = ({ options, value, name, onChange ,label}) => {
         onChange={onChange}
         className="bg-gray-800 text-white text-sm font-semibold rounded-md border border-gray-700 px-3 py-1 pr-8 outline-none appearance-none focus:ring-1 focus:ring-gray-500"
       >
-        <option value="" disabled>
-          Role
-        </option>
         {options.map((option, index) => (
           <option key={index} value={option}>
             {option}
