@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Dropdown from "../../components/Dropdown.jsx";
 import RegisteredUsers from "../../components/RegisteredUsers.jsx";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const registration = ["Newest First", "Oldest First"];
 
@@ -33,6 +35,47 @@ const Users = () => {
     setFilter(selectedValue);
   };
 
+  const displayMessage = (msg, type = "success") => {
+    if (type === "success") {
+      toast.success(msg);
+    } else if (type === "error") {
+      toast.error(msg);
+    } else {
+      toast.info(msg);
+    }
+  };
+
+  const handleDeleteUser = async (userId) => {
+    if (
+      !window.confirm(
+        "Are you sure you want to delete this user? This action cannot be undone."
+      )
+    ) {
+      return;
+    }
+
+    try {
+      displayMessage("Deleting user...", "info");
+      const response = await axios.delete(`${API_URL}/${userId}`);
+      const data = response.data;
+
+      if (data.success) {
+        setUserDetails((prevUsers) =>
+          prevUsers.filter((user) => user._id !== userId)
+        );
+        displayMessage(data.message || "User deleted successfully!");
+      } else {
+        displayMessage(data.error || "Failed to delete user", "error");
+      }
+    } catch (error) {
+      console.error("Error deleting user:", error.message);
+      displayMessage(
+        error.response?.data?.error || error.message || "Error deleting user",
+        "error"
+      );
+    }
+  };
+
   const sortedUsers = [...userDetails].sort((a, b) => {
     if (filter === "Newest First") {
       return new Date(b.createdAt) - new Date(a.createdAt);
@@ -59,8 +102,11 @@ const Users = () => {
       </div>
 
       <div>
-        <RegisteredUsers users={sortedUsers} />
+        <RegisteredUsers users={sortedUsers} onDelete={handleDeleteUser} />
       </div>
+
+      {/* Toastify container */}
+      <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );
 };

@@ -1,8 +1,6 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const RegisteredUsers = ({ users }) => {
-  const navigate = useNavigate();
-
+const RegisteredUsers = ({ users, onDelete }) => {
   return (
     <div className="overflow-hidden overflow-y-auto rounded-lg border border-gray-700 h-110 w-full">
       <table className="w-full border border-collapse">
@@ -16,10 +14,7 @@ const RegisteredUsers = ({ users }) => {
         </thead>
         <tbody className="text-center">
           {users.map((user) => (
-            <tr
-              key={user._id}
-              className="border-b border-gray-700 "
-            >
+            <tr key={user._id} className="border-b border-gray-700 ">
               <td className="py-5">{user.fullName}</td>
               <td>{user.email}</td>
               <td>{new Date(user.createdAt).toLocaleDateString()}</td>
@@ -32,7 +27,10 @@ const RegisteredUsers = ({ users }) => {
                   View
                 </Link>
 
-                <button className="bg-red-500 px-2 rounded-md cursor-pointer">
+                <button
+                  onClick={() => onDelete(user._id)}
+                  className="bg-red-500 px-2 rounded-md cursor-pointer"
+                >
                   Delete
                 </button>
               </td>
