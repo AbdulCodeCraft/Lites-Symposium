@@ -43,4 +43,22 @@ const getFaq = async (req, res) => {
   }
 };
 
-module.exports = getFaq;
+const createFaq = async (req, res) => {
+  try {
+    const newFaq = await Faq.create(req.body);
+
+    res.status(201).json({
+      success: true,
+      data: newFaq,
+      message: "Faq created successfully",
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: "Server Error: Unable to create Faq.",
+      details: error.message,
+    });
+  }
+}
+
+module.exports = {getFaq,createFaq};

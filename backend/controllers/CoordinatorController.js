@@ -32,7 +32,7 @@ const getCoordinators = async (req, res) => {
       success: true,
       overall: overall,
       technicalEvents: technicalEvents,
-      nonTechnicalEvents: nonTechnicalEvents, 
+      nonTechnicalEvents: nonTechnicalEvents,
     });
   } catch (error) {
     console.error(error.message);
@@ -40,4 +40,22 @@ const getCoordinators = async (req, res) => {
   }
 };
 
-module.exports = getCoordinators;
+const createCoordinator = async (req, res) => {
+  try {
+    const newCoordinator = await Coordinator.create(req.body);
+
+    res.status(201).json({
+      success: true,
+      data: newCoordinator,
+      message: "coordinator created successfully",
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: "Server Error: Unable to create coordinator.",
+      details: error.message,
+    });
+  }
+};
+
+module.exports = {getCoordinators,createCoordinator}

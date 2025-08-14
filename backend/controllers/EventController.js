@@ -53,7 +53,27 @@ const getEventById = async (req, res) => {
     res.status(500).json({ success: false, error: "Server Error" });
   }
 };
+
+const createEvent = async (req, res) => {
+  try {
+    const newEvent = await Event.create(req.body);
+
+    res.status(201).json({
+      success: true,
+      data: newEvent,
+      message: "Event created successfully",
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: "Server Error: Unable to create event.",
+      details: error.message,
+    });
+  }
+};
+
 module.exports = {
   getEvents,
   getEventById,
+  createEvent
 };

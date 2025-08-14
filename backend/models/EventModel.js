@@ -10,7 +10,7 @@ const EventSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    eventDiscription: {
+    eventDescription: {
         type:String,
         required:true,
         trim:true
@@ -24,7 +24,7 @@ const EventSchema = new mongoose.Schema({
         }
     }
     ,
-    fullDiscription: {
+    fullDescription: {
         type:String,
         required:true,
         trim:true

@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const CoardinatorController = require('../controllers/CoordinatorController.js')
+const CoordinatorController = require('../controllers/CoordinatorController.js')
 
 
-router.get('/',CoardinatorController);
+router.get('/',CoordinatorController.getCoordinators);
+router.post('/create',CoordinatorController.createCoordinator)
 module.exports  = router;
