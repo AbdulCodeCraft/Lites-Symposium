@@ -15,11 +15,11 @@ const FaqSchema = new mongoose.Schema({
       type:String,
       required:true,
       enum:{
-        values:["Registration","Events","Food_and_Breverages"]
+        values:["registration","events","food_and_breverages"]
       }
     }
     
-}, { timestamps: true });
+});
 
 
 module.exports = mongoose.model('Faq',FaqSchema);
