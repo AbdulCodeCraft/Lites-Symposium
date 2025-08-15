@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Dropdown from "../../components/Dropdown.jsx";
-import RegisteredUsers from "../../components/RegisteredUsers.jsx";
+import UserTable from "../../components/UserTable.jsx";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const registration = ["Newest First", "Oldest First"];
+const headings = ["username","e-mail","Registration Date","Actions"];
 
 const Users = () => {
   const [userDetails, setUserDetails] = useState([]);
@@ -102,7 +103,7 @@ const Users = () => {
       </div>
 
       <div>
-        <RegisteredUsers users={sortedUsers} onDelete={handleDeleteUser} />
+        <UserTable headings={headings} users={sortedUsers} onDelete={handleDeleteUser} />
       </div>
 
       {/* Toastify container */}

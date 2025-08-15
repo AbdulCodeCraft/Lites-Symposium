@@ -1,17 +1,18 @@
 import { Link } from "react-router-dom";
 
-const RegisteredUsers = ({ users, onDelete }) => {
+const RegisteredUsers = ({ headings, users, onDelete }) => {
   return (
     <div className="overflow-hidden overflow-y-auto rounded-lg border border-gray-700 h-110 w-full">
       <table className="w-full border border-collapse">
         <thead className="sticky top-0 bg-gray-700 h-12">
           <tr>
-            <th>User Name</th>
-            <th>E-mail</th>
-            <th>Registration Date</th>
-            <th>Actions</th>
+            {headings.map((heading, index) => (
+              <th key={index} className="px-4 py-2 text-center">
+                {heading}
+              </th>
+            ))}
           </tr>
-        </thead>
+        </thead>  
         <tbody className="text-center">
           {users.map((user) => (
             <tr key={user._id} className="border-b border-gray-700 ">

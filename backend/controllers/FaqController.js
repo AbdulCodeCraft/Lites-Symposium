@@ -7,6 +7,7 @@ const getFaq = async (req, res) => {
     const registration = allFaq
       .filter((c) => c.type === "registration")
       .map((c) => ({
+        _id: c._id,
         question: c.question,
         answer: c.answer,
         type: c.type,
@@ -15,6 +16,7 @@ const getFaq = async (req, res) => {
     const events = allFaq
       .filter((c) => c.type === "events")
       .map((c) => ({
+        _id: c._id,
         question: c.question,
         answer: c.answer,
         type: c.type,
@@ -23,6 +25,7 @@ const getFaq = async (req, res) => {
     const food_and_breverages = allFaq
       .filter((c) => c.type === "food_and_breverages")
       .map((c) => ({
+        _id: c._id,
         question: c.question,
         answer: c.answer,
         type: c.type,
@@ -61,4 +64,38 @@ const createFaq = async (req, res) => {
   }
 }
 
-module.exports = {getFaq,createFaq};
+const getFaqById = async (req, res) => {
+  try {
+    const faq = await Faq.findById(req.params.id);
+
+    if (!faq) {
+      return res.status(404).json({ success: false, error: "Faq not Found" });
+    }
+
+    return res.status(200).json({ success: true, faq });
+  } catch (error) {
+    console.log("Error fetching faq by id " + error.message);
+    return res.status(500).json({ success: false, error: "Server Error" });
+  }
+};
+
+const deleteFaqById = async (req, res) => {
+  try {
+    const faqId = req.params.id;
+    const faq = await Faq.findByIdAndDelete(faqId);
+
+    if (!faq) {
+      return res.status(404).json({ success: false, error: "faq not found" });
+    }
+
+    res
+      .status(200)
+      .json({ success: true, message: "faq deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting faq by ID:", error);
+
+    res.status(500).json({ success: false, error: "Server Error" });
+  }
+};
+
+module.exports = {getFaq,createFaq,getFaqById,deleteFaqById};
