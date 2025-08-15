@@ -3,7 +3,7 @@ import CoordinatorTable from "../../components/CoordinatorTable.jsx";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const headings = ["Name", "Contact Number", "Type", "Role"];
+const headings = ["Name", "Contact Number", "Event ", "Actions"];
 const Coordinator = () => {
   const [coordinatorDetails, setCoordinatorDetails] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -42,7 +42,7 @@ const Coordinator = () => {
     <div className="space-y-7">
       <div className="flex justify-between items-center">
         <h1 className="text-4xl font-semibold">Coordinator Management</h1>
-        <Link className="bg-gray-900 px-2 py-2 rounded-md">
+        <Link to={"/admin/add-coordinators"} className="bg-gray-900 px-2 py-2 rounded-md">
           Add Coordinators
         </Link>
       </div>

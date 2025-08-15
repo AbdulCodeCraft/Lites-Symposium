@@ -22,10 +22,10 @@ const CoordinatorTable = ({ headings, datas }) => {
 
               <td className="space-x-3">
                 <Link
-                  className="bg-blue-500 px-2 py-1 rounded-md cursor-pointer"
+                  className="bg-green-500 px-2 py-1 rounded-md cursor-pointer"
                   //   to={`/admin/user/details/${user._id}`}
                 >
-                  View
+                  Edit
                 </Link>
 
                 <button
