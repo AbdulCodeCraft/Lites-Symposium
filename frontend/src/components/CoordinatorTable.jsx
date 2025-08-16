@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const CoordinatorTable = ({ headings, datas }) => {
+const CoordinatorTable = ({ headings, datas,onDelete }) => {
   return (
     <div className="overflow-hidden overflow-y-auto rounded-lg border border-gray-700 h-110 w-full">
       <table className="w-full border border-collapse">
@@ -14,8 +14,8 @@ const CoordinatorTable = ({ headings, datas }) => {
           </tr>
         </thead>
         <tbody className="text-center">
-          {datas.map((data, index) => (
-            <tr key={index} className="border-b border-gray-700 ">
+          {datas.map((data) => (
+            <tr key={data._id} className="border-b border-gray-700 ">
               <td className="py-5">{data.Coordinator_name}</td>
               <td>{data.contact_number}</td>
               <td>{data.role || data.event_name}</td>
@@ -29,7 +29,7 @@ const CoordinatorTable = ({ headings, datas }) => {
                 </Link>
 
                 <button
-                  //   onClick={() => onDelete(user._id)}
+                    onClick={() => onDelete(data._id)}
                   className="bg-red-500 px-2 rounded-md cursor-pointer"
                 >
                   Delete

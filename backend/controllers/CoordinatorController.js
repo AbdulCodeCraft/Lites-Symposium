@@ -10,7 +10,7 @@ const getCoordinators = async (req, res) => {
         _id: c._id,
         contact_number: c.contactNumber,
         Coordinator_name: c.name,
-        role: c.role,
+        event_name: c.eventName,
       }));
 
     const technicalEvents = allCoordinators

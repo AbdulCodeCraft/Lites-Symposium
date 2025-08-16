@@ -21,7 +21,7 @@ const Table = (props) => {
                 <tr>
                   <td className={tdStyle}>{props.overallCoardinator ? item.Coordinator_name : item.event_name}</td>
                   <td className={tdStyle}>{props.overallCoardinator ? item.contact_number : item.Coordinator_name}</td>
-                  <td className={tdStyle}>{props.overallCoardinator ? item.role : item.contact_number}</td>
+                  <td className={tdStyle}>{props.overallCoardinator ? item.event_name : item.contact_number}</td>
                 </tr>
               );
             })}

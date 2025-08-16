@@ -27,13 +27,13 @@ const CoordinatorSchema = new mongoose.Schema(
         message: "Coordinator type must be overall, technical,or non-technical",
       },
     },
-    role: {
-      type: String,
-      required: function () {
-        return this.type == "overall";
-      },
-      trim: true,
-    },
+    // role: {
+    //   type: String,
+    //   required: function () {
+    //     return this.type == "overall";
+    //   },
+    //   trim: true,
+    // },
     eventName: {
       type: String,
       required: function () {
