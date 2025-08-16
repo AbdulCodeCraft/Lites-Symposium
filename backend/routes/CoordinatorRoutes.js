@@ -1,11 +1,11 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const CoordinatorController = require('../controllers/CoordinatorController.js')
+const CoordinatorController = require("../controllers/CoordinatorController.js");
 
-
-router.get('/',CoordinatorController.getCoordinators);
-router.get('/:id',CoordinatorController.getCoordinatorById);
+router.get("/", CoordinatorController.getCoordinators);
+router.get("/:id", CoordinatorController.getCoordinatorById);
 router.delete("/:id", CoordinatorController.deleteUserById);
+router.put("/:id", CoordinatorController.updateCoordinator);
 
-router.post('/create',CoordinatorController.createCoordinator)
-module.exports  = router;   
+router.post("/create", CoordinatorController.createCoordinator);
+module.exports = router;

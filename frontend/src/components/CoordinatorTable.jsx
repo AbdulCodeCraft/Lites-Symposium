@@ -23,7 +23,7 @@ const CoordinatorTable = ({ headings, datas,onDelete }) => {
               <td className="space-x-3">
                 <Link
                   className="bg-green-500 px-2 py-1 rounded-md cursor-pointer"
-                  //   to={`/admin/user/details/${user._id}`}
+                   to={`/admin/edit-coordinator/${data._id}`}
                 >
                   Edit
                 </Link>

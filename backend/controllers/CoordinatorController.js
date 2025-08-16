@@ -99,9 +99,41 @@ const deleteUserById = async (req, res) => {
   }
 };
 
+const updateCoordinator = async (req, res) => {
+  try {
+    const coordinatorId = req.params.id;
+
+    const updatedCoordinator = await Coordinator.findByIdAndUpdate(
+      coordinatorId,
+      req.body,
+      { new: true, runValidators: true }
+    );
+
+    if (!updatedCoordinator) {
+      return res
+        .status(404)
+        .json({ success: false, error: "Coordinator not found" });
+    }
+
+    res.status(200).json({
+      success: true,
+      data: updatedCoordinator,
+      message: "Coordinator updated successfully",
+    });
+  } catch (error) {
+    console.error("Error updating coordinator:", error.message);
+    res.status(500).json({
+      success: false,
+      error: "Server Error: Unable to update coordinator.",
+      details: error.message,
+    });
+  }
+};
+
 module.exports = {
   getCoordinators,
   createCoordinator,
   getCoordinatorById,
   deleteUserById,
+  updateCoordinator
 };

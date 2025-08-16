@@ -17,7 +17,7 @@ const Coardinator = () => {
   const[error,setError] = useState(null)
 
   useEffect(()=>{
-    const API_URL = "https://lites-symposium.onrender.com/api/coordinators";
+    const API_URL = "http://localhost:3000/api/coordinators/";
 
     const fetchCoardinator = async() =>{
       try {

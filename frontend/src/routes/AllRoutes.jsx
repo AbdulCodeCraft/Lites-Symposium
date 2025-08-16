@@ -45,6 +45,7 @@ const AllRoutes = () => {
             <Route path="users" element={<Users />} />
             <Route path="coordinators" element={<Coordinator />} />
             <Route path="add-coordinators" element={<AddCoordinators/>} />
+            <Route path="/admin/edit-coordinator/:id" element={<AddCoordinators />} />
             <Route path="events" element={<Events />} />
             <Route path="faqs" element={<FAQs />} />
             <Route path="logout" element={<Logout />} />
