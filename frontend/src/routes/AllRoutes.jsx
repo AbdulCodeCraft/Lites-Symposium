@@ -22,6 +22,7 @@ import ProtectRoutes from "./ProtectRoutes.jsx";
 import UserDetails from "../pages/admin/UserDetails.jsx";
 import AddCoordinators from "../pages/admin/AddCoordinators.jsx";
 import AddFaq from "../pages/admin/AddFaq.jsx";
+import AddEvents from "../pages/admin/addEvents.jsx";
 
 const AllRoutes = () => {
   return (
@@ -51,6 +52,8 @@ const AllRoutes = () => {
               element={<AddCoordinators />}
             />
             <Route path="events" element={<Events />} />
+            <Route path="events/add-event" element={<AddEvents/>} />
+            <Route path="events/edit-event/:id" element={<AddEvents />} />
             <Route path="faqs" element={<FAQs />} />
             <Route path="/admin/add-faq" element={<AddFaq />} />
             <Route path="/admin/edit-faq/:id" element={<AddFaq />} />

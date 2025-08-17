@@ -10,9 +10,8 @@ const getEvents = async (req, res) => {
         id: event._id,
         image: event.image,
         event_name: event.eventName,
-        event: event.eventDiscription,
-        event_description: event.eventDiscription,
-        event_full_description: event.fullDiscription,
+        event_description: event.eventDescription,
+        event_full_description: event.fullDescription,
         rules: event.rules,
         type: event.type,
       }));
@@ -23,8 +22,8 @@ const getEvents = async (req, res) => {
         id: event._id,
         image: event.image,
         event_name: event.eventName,
-        event_description: event.eventDiscription,
-        event_full_description: event.fullDiscription,
+        event_description: event.eventDescription,
+        event_full_description: event.fullDescription,
         rules: event.rules,
         type: event.type,
       }));
@@ -43,11 +42,11 @@ const getEvents = async (req, res) => {
 const getEventById = async (req, res) => {
   try {
     const event = await Event.findById(req.params.id);
-    
+
     if (!event) {
       res.status(404).json({ success: false, error: "Event not Found" });
     }
-    return res.status(200).json({success:true,event})
+    return res.status(200).json({ success: true, event });
   } catch (error) {
     console.log("Error fetching event by id " + error.message);
     res.status(500).json({ success: false, error: "Server Error" });
@@ -95,5 +94,5 @@ module.exports = {
   getEvents,
   getEventById,
   createEvent,
-  deleteEventById
+  deleteEventById,
 };

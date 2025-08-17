@@ -10,7 +10,7 @@ const EventPage = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const API_URL = "https://lites-symposium.onrender.com/api/events";
+  const API_URL = "http://localhost:3000/api/events";
 
   useEffect(() => {
     const fetchEvents = async () => {

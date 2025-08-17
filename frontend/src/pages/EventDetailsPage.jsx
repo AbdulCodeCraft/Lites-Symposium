@@ -67,13 +67,13 @@ const EventDetailsPage = () => {
             {techEventDetails.eventName} 
           </h1>
           <p className="text-gray-400 text-sm md:text-md">
-            {techEventDetails.eventDiscription}
+            {techEventDetails.eventDescription}
           </p>
         </div>
         <div className="space-y-3">
           <h1 className="text-xl md:text-3xl font-semibold">Description</h1>
           <p className="text-gray-300 text-sm md:text-md">
-            {techEventDetails.fullDiscription}
+            {techEventDetails.fullDescription}
           </p>
         </div>
         <div className="space-y-3">
