@@ -7,7 +7,7 @@ import RingLoader from "react-spinners/RingLoader";
 const FaqPage = () => {
   const [faq, setFaq] = useState([]);
   const [loading, setLoading] = useState(true);
-  const API_URL = "https://lites-symposium.onrender.com/api/faq";
+  const API_URL = "http://localhost:3000/api/faq/";
   useEffect(() => {
     const fetchFaq = async () => {
       try {

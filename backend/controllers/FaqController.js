@@ -98,4 +98,36 @@ const deleteFaqById = async (req, res) => {
   }
 };
 
-module.exports = {getFaq,createFaq,getFaqById,deleteFaqById};
+
+const updateFaq = async (req, res) => {
+  try {
+    const faqId = req.params.id;
+
+    const updatedFaq = await Faq.findByIdAndUpdate(
+      faqId,
+      req.body,
+      { new: true, runValidators: true }
+    );
+
+    if (!updatedFaq) {
+      return res
+        .status(404)
+        .json({ success: false, error: "Faq not found" });
+    }
+
+    res.status(200).json({
+      success: true,
+      data: updatedFaq,
+      message: "Faq updated successfully",
+    });
+  } catch (error) {
+    console.error("Error updating Faq:", error.message);
+    res.status(500).json({
+      success: false,
+      error: "Server Error: Unable to update Faq.",
+      details: error.message,
+    });
+  }
+};
+
+module.exports = {getFaq,createFaq,getFaqById,deleteFaqById,updateFaq};

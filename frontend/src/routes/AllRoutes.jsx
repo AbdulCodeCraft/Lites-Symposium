@@ -53,6 +53,7 @@ const AllRoutes = () => {
             <Route path="events" element={<Events />} />
             <Route path="faqs" element={<FAQs />} />
             <Route path="/admin/add-faq" element={<AddFaq />} />
+            <Route path="/admin/edit-faq/:id" element={<AddFaq />} />
             <Route path="logout" element={<Logout />} />
             <Route path="user/details/:id" element={<UserDetails />} />
           </Route>

@@ -6,5 +6,6 @@ router.get('/',FaqController.getFaq)
 router.get('/:id',FaqController.getFaqById)
 router.delete('/:id',FaqController.deleteFaqById)
 router.post('/',FaqController.createFaq)
+router.put('/:id',FaqController.updateFaq)
 
 module.exports = router;
