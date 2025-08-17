@@ -1,11 +1,99 @@
-import React from 'react'
-
+import { Link } from "react-router-dom";
+import FaqList from "../../components/FaqList";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
 const FAQs = () => {
+  const [faqs, setFaqs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const API_URL = "http://localhost:3000/api/faq";
+
+  useEffect(() => {
+    const fetchFaq = async () => {
+      try {
+        const response = await axios.get(API_URL);
+        const data = response.data;
+
+        if (data.success) {
+          const combined = [
+            ...data.registration,
+            ...data.events,
+            ...data.food_and_breverages,
+          ];
+          setFaqs(combined);
+        }
+      } catch (error) {
+        console.error("Error fetching FAQs:", error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchFaq();
+  }, []);
+
+  const displayMessage = (msg, type = "success") => {
+    if (type === "success") {
+      toast.success(msg);
+    } else if (type === "error") {
+      toast.error(msg);
+    } else {
+      toast.info(msg);
+    }
+  };
+
+  const handleDeleteUser = async (userId) => {
+    if (
+      !window.confirm(
+        "Are you sure you want to delete this user? This action cannot be undone."
+      )
+    ) {
+      return;
+    }
+
+    try {
+      displayMessage("Deleting user...", "info");
+
+      const response = await axios.delete(`${API_URL}/${userId}`);
+      const data = response.data;
+
+      if (data.success) {
+        setFaqs((prevUsers) => prevUsers.filter((user) => user._id !== userId));
+        displayMessage(data.message || "User deleted successfully!");
+      } else {
+        displayMessage(data.error || "Failed to delete user", "error");
+      }
+    } catch (error) {
+      console.error("Error deleting user:", error.message);
+      displayMessage(
+        error.response?.data?.error || error.message || "Error deleting user",
+        "error"
+      );
+    }
+  };
+  if (loading) return <p>Loading FAQs...</p>;
+
   return (
     <div>
-      faq
-    </div>
-  )
-}
+      <ToastContainer position="top-right" autoClose={3000} />
+      <div className="space-y-7">
+        <div className="flex justify-between items-center">
+          <h1 className="text-4xl font-semibold">FAQ Management</h1>
+          <Link
+            to={"/admin/add-faq"}
+            className="bg-gray-900 px-2 py-2 rounded-md"
+          >
+            Add FAQ
+          </Link>
+        </div>
 
-export default FAQs
+        <div className="space-y-5">
+          <h1 className="text-2xl font-semibold">Existing FAQ</h1>
+          <FaqList onDelete={handleDeleteUser} faqs={faqs} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default FAQs;

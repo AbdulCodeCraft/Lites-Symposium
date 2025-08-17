@@ -21,6 +21,7 @@ import Logout from "../pages/admin/Logout.jsx";
 import ProtectRoutes from "./ProtectRoutes.jsx";
 import UserDetails from "../pages/admin/UserDetails.jsx";
 import AddCoordinators from "../pages/admin/AddCoordinators.jsx";
+import AddFaq from "../pages/admin/AddFaq.jsx";
 
 const AllRoutes = () => {
   return (
@@ -44,12 +45,16 @@ const AllRoutes = () => {
             <Route index element={<Users />} />
             <Route path="users" element={<Users />} />
             <Route path="coordinators" element={<Coordinator />} />
-            <Route path="add-coordinators" element={<AddCoordinators/>} />
-            <Route path="/admin/edit-coordinator/:id" element={<AddCoordinators />} />
+            <Route path="add-coordinators" element={<AddCoordinators />} />
+            <Route
+              path="/admin/edit-coordinator/:id"
+              element={<AddCoordinators />}
+            />
             <Route path="events" element={<Events />} />
             <Route path="faqs" element={<FAQs />} />
+            <Route path="/admin/add-faq" element={<AddFaq />} />
             <Route path="logout" element={<Logout />} />
-            <Route path="user/details/:id" element={<UserDetails/>}/>
+            <Route path="user/details/:id" element={<UserDetails />} />
           </Route>
         </Route>
       </Routes>
