@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import EventTable from "../../components/EventTable";
+import { ToastContainer, toast } from "react-toastify";
 
-const headings = ["Event Name","Description","Types","Actions"]
+const headings = ["Event Name", "Description", "Types", "Actions"];
 
 const Events = () => {
   const [events, setEvents] = useState([]);
@@ -33,11 +34,53 @@ const Events = () => {
     fetchEvents();
   }, []);
 
+  const displayMessage = (msg, type = "success") => {
+    if (type === "success") {
+      toast.success(msg);
+    } else if (type === "error") {
+      toast.error(msg);
+    } else {
+      toast.info(msg);
+    }
+  };
+
+  const handleDeleteUser = async (userId) => {
+    if (
+      !window.confirm(
+        "Are you sure you want to delete this user? This action cannot be undone."
+      )
+    ) {
+      return;
+    }
+
+    try {
+      displayMessage("Deleting user...", "info");
+
+      const response = await axios.delete(`${API_URL}/${userId}`);
+      const data = response.data;
+
+      if (data.success) {
+        setEvents((prevUsers) =>
+          prevUsers.filter((user) => user._id !== userId)
+        );
+        displayMessage(data.message || "User deleted successfully!");
+      } else {
+        displayMessage(data.error || "Failed to delete user", "error");
+      }
+    } catch (error) {
+      console.error("Error deleting user:", error.message);
+      displayMessage(
+        error.response?.data?.error || error.message || "Error deleting user",
+        "error"
+      );
+    }
+  };
+
   if (loading) {
     return <p>Loading users...</p>;
   }
-  console.log(events);
   
+
   return (
     <div className="space-y-7">
       <div className="flex justify-between items-center">
@@ -49,9 +92,14 @@ const Events = () => {
           Add Event
         </Link>
       </div>
+      <ToastContainer position="top-right" autoClose={3000} />
 
       <div>
-        <EventTable events={events} headings={headings}/>
+        <EventTable
+          events={events}
+          onDelete={handleDeleteUser}
+          headings={headings}
+        />
       </div>
     </div>
   );

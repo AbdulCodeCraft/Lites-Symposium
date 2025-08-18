@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-const EventTable = ({events ,headings}) => {
+const EventTable = ({events ,headings ,onDelete}) => {
   return (
    <div className="overflow-hidden overflow-y-auto rounded-lg border border-gray-700 h-110 w-full">
       <table className="w-full border border-collapse">
@@ -28,7 +28,7 @@ const EventTable = ({events ,headings}) => {
                 </Link>
 
                 <button
-                    onClick={() => onDelete(event._id)}
+                    onClick={() => onDelete(event.id)}
                   className="bg-red-500 px-2 rounded-md cursor-pointer"
                 >
                   Delete

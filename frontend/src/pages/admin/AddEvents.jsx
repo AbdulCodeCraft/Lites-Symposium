@@ -32,7 +32,7 @@ const AddEvents = () => {
         try {
           const res = await axios.get(EDIT_API);
           if (res.data.success) {
-            setFormData(res.data.technicalEvents);
+            setFormData(res.data.event);
           }
         } catch (err) {
           console.error("Error fetching coordinator:", err.message);
@@ -124,11 +124,11 @@ const AddEvents = () => {
         <TextArea
           label="Rules"
           placeholder="Enter rules separated by commas"
-          value={formData.rules.join(", ")} 
+          value={formData.rules.join(", ")}
           onChange={(e) =>
             setFormData((prevData) => ({
               ...prevData,
-              rules: e.target.value.split(",").map((rule) => rule.trim()), 
+              rules: e.target.value.split(",").map((rule) => rule.trim()),
             }))
           }
           name="rules"
