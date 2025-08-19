@@ -60,9 +60,8 @@ const Events = () => {
       const data = response.data;
 
       if (data.success) {
-        setEvents((prevUsers) =>
-          prevUsers.filter((user) => user._id !== userId)
-        );
+        setEvents((prevEvents) => prevEvents.filter((event) => event.id !== userId));
+
         displayMessage(data.message || "User deleted successfully!");
       } else {
         displayMessage(data.error || "Failed to delete user", "error");

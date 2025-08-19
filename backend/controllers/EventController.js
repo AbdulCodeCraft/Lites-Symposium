@@ -74,7 +74,7 @@ const createEvent = async (req, res) => {
 const deleteEventById = async (req, res) => {
   try {
     const EventId = req.params.id;
-    const event = await User.findByIdAndDelete(EventId);
+    const event = await Event.findByIdAndDelete(EventId);
 
     if (!event) {
       return res.status(404).json({ success: false, error: "Event not found" });
