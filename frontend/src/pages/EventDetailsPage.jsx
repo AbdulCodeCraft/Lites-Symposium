@@ -46,7 +46,7 @@ const EventDetailsPage = () => {
     return (
       <Layout>
         <div className="min-h-screen flex items-center justify-center bg-black text-white">
-          <p>No event Found or loading...</p> 
+          <p>No event Found or loading....</p> 
         </div>
       </Layout>
     );
