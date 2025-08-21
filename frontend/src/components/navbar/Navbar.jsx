@@ -10,7 +10,7 @@ const Navbar = () => {
     <div className="px-5 md:px-10 h-12 flex justify-between bg-gray-700/40 rounded-md items-center fixed top-0 md:mt-5 mx-auto md:w-4/5 left-0 right-0 z-20 text-white">
       <div>
         <Link to={"/"}>
-          <h1 className="text-2xl">Symposium</h1>
+          <h1 className="text-2xl">Byte_Craze</h1>
           
         </Link>
       </div>

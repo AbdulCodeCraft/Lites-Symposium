@@ -40,8 +40,8 @@ const RegisterPage = () => {
 
   const [loading, setLoading] = useState(false);
 
-  const API_URL = "https://lites-symposium.onrender.com/api/register";
 
+  const API_URL = `${import.meta.env.VITE_APP_BACKEND_URL}/api/register/`;
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));

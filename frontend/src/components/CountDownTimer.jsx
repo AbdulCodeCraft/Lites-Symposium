@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 
-const CountDownEndTime = new Date("2025-08-01T12:00:00Z").getTime();
+const CountDownEndTime = new Date("2025-10-17T12:00:00Z").getTime();
 
 const CountDownTimer = () => {
+
   const getTimeLeft = () => {
     return Math.max(CountDownEndTime - Date.now(), 0);
   };
@@ -12,6 +13,8 @@ const CountDownTimer = () => {
     const interval = setInterval(() => {
       const timeLeft = getTimeLeft();
       setRemainingTime(timeLeft);
+      
+      
 
       if (timeLeft <= 0) {
         clearInterval(interval);

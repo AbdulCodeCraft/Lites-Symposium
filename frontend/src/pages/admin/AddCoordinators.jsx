@@ -19,8 +19,10 @@ const AddCoordinators = () => {
   });
   const [loading, setLoading] = useState(false);
 
-  const CREATE_API = "http://localhost:3000/api/coordinators/create";
-  const EDIT_API = `http://localhost:3000/api/coordinators/${id}`;
+  
+
+  const CREATE_API =`${import.meta.env.VITE_APP_BACKEND_URL}/api/coordinators/create`;
+  const EDIT_API = `${import.meta.env.VITE_APP_BACKEND_URL}/api/coordinators/${id}`;
 
   useEffect(() => {
     if (id) {

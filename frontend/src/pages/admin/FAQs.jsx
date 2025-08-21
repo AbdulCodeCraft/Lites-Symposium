@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import FaqList from "../../components/FaqList";
+
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+import Loader from "../../components/Loader";
 const FAQs = () => {
   const [faqs, setFaqs] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -71,27 +73,33 @@ const FAQs = () => {
       );
     }
   };
-  if (loading) return <p>Loading FAQs...</p>;
+ 
 
   return (
     <div>
-      <ToastContainer position="top-right" autoClose={3000} />
-      <div className="space-y-7">
-        <div className="flex justify-between items-center">
-          <h1 className="text-4xl font-semibold">FAQ Management</h1>
-          <Link
-            to={"/admin/add-faq"}
-            className="bg-gray-900 px-2 py-2 rounded-md"
-          >
-            Add FAQ
-          </Link>
-        </div>
+      {loading && (
+        <Loader/>
+      )}
 
-        <div className="space-y-5">
-          <h1 className="text-2xl font-semibold">Existing FAQ</h1>
-          <FaqList onDelete={handleDeleteUser} faqs={faqs} />
+      {!loading && (
+        <div className="">
+          <ToastContainer position="top-right" autoClose={3000} />
+          <div className="flex justify-between items-center space-y-7 p-2">
+            <h1 className="lg:text-4xl text-2xl font-semibold">FAQ Management</h1>
+            <Link
+              to={"/admin/add-faq"}
+              className="bg-gray-900 lg:px-2 lg:py-2 py-1 px-1 lg:text-md text-sm text-center rounded-md"
+            >
+              Add FAQ
+            </Link>
+          </div>
+
+          <div className="lg:space-y-5 p-2">
+            <h1 className="lg:text-2xl text-xl pb-5 font-semibold">Existing FAQ</h1>
+            <FaqList onDelete={handleDeleteUser} faqs={faqs} />
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

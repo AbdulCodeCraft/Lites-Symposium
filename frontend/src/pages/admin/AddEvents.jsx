@@ -23,8 +23,11 @@ const AddEvents = () => {
   });
   const [loading, setLoading] = useState(false);
 
-  const CREATE_API = "http://localhost:3000/api/events/";
-  const EDIT_API = `http://localhost:3000/api/events/${id}`;
+
+
+  
+  const CREATE_API =`${import.meta.env.VITE_APP_BACKEND_URL}/api/events`;
+  const EDIT_API = `${import.meta.env.VITE_APP_BACKEND_URL}/api/events/${id}`;
 
   useEffect(() => {
     if (id) {

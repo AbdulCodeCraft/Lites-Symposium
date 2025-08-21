@@ -1,18 +1,20 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Dropdown from "../../components/Dropdown.jsx";
+import Loader from "../../components/Loader.jsx";
 import UserTable from "../../components/UserTable.jsx";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const registration = ["Newest First", "Oldest First"];
-const headings = ["username","e-mail","Registration Date","Actions"];
+const headings = ["username", "e-mail", "Registration Date", "Actions"];
 
 const Users = () => {
   const [userDetails, setUserDetails] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState(registration[0]);
-  const API_URL = "http://localhost:3000/api/user";
+ 
+  const API_URL = `${import.meta.env.VITE_APP_BACKEND_URL}/api/user/`;
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -85,29 +87,33 @@ const Users = () => {
     }
   });
 
-  if (loading) {
-    return <p>Loading users...</p>;
-  }
-
   return (
-    <div className="space-y-7">
-      <h1 className="text-4xl font-semibold">Registered User</h1>
+    <div>
+      {loading && <Loader />}
+      {!loading && (
+        <div className="lg:space-y-7 space-y-5 p-2">
+          <h1 className="text-2xl font-semibold">Registered User</h1>
 
-      <div className="flex space-x-6">
-        <Dropdown
-          label="Filter By Registration"
-          value={filter}
-          options={registration}
-          onChange={(e) => handleFilterChange(e.target.value)}
-        />
-      </div>
+          <div className="flex space-x-6">
+            <Dropdown
+              label="Filter By Registration"
+              value={filter}
+              options={registration}
+              onChange={(e) => handleFilterChange(e.target.value)}
+            />
+          </div>
 
-      <div>
-        <UserTable headings={headings} users={sortedUsers} onDelete={handleDeleteUser} />
-      </div>
+          <div>
+            <UserTable
+              headings={headings}
+              users={sortedUsers}
+              onDelete={handleDeleteUser}
+            />
+          </div>
 
-      
-      <ToastContainer position="top-right" autoClose={3000} />
+          <ToastContainer position="top-right" autoClose={3000} />
+        </div>
+      )}
     </div>
   );
 };

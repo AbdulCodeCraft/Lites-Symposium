@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import EventTable from "../../components/EventTable";
 import { ToastContainer, toast } from "react-toastify";
+import Loader from "../../components/Loader";
 
 const headings = ["Event Name", "Description", "Types", "Actions"];
 
@@ -10,7 +11,8 @@ const Events = () => {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const API_URL = "http://localhost:3000/api/events";
+
+  const API_URL = `${import.meta.env.VITE_APP_BACKEND_URL}/api/events/`;
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -60,7 +62,9 @@ const Events = () => {
       const data = response.data;
 
       if (data.success) {
-        setEvents((prevEvents) => prevEvents.filter((event) => event.id !== userId));
+        setEvents((prevEvents) =>
+          prevEvents.filter((event) => event.id !== userId)
+        );
 
         displayMessage(data.message || "User deleted successfully!");
       } else {
@@ -75,31 +79,33 @@ const Events = () => {
     }
   };
 
-  if (loading) {
-    return <p>Loading users...</p>;
-  }
-  
-
   return (
-    <div className="space-y-7">
-      <div className="flex justify-between items-center">
-        <h1 className="text-4xl font-semibold">Event Management</h1>
-        <Link
-          to={"/admin/events/add-event"}
-          className="bg-gray-900 px-2 py-2 rounded-md"
-        >
-          Add Event
-        </Link>
-      </div>
-      <ToastContainer position="top-right" autoClose={3000} />
+    <div>
+      {loading && (
+        <Loader/>
+      )}
+      {!loading && (
+        <div className="lg:space-y-7 space-y-5 p-1 ">
+          <div className="flex justify-between items-center">
+            <h1 className="lg:text-4xl text-2xl font-semibold">Event Management</h1>
+            <Link
+              to={"/admin/events/add-event"}
+               className="bg-gray-900 lg:px-2 lg:py-2 py-1 px-1 lg:text-md text-sm text-center rounded-md"
+            >
+              Add Event
+            </Link>
+          </div>
+          <ToastContainer position="top-right" autoClose={3000} />
 
-      <div>
-        <EventTable
-          events={events}
-          onDelete={handleDeleteUser}
-          headings={headings}
-        />
-      </div>
+          <div>
+            <EventTable
+              events={events}
+              onDelete={handleDeleteUser}
+              headings={headings}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

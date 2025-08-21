@@ -5,7 +5,9 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const API_URL = "http://localhost:3000/api/faq";
+
+const API_URL = `${import.meta.env.VITE_APP_BACKEND_URL}/api/faq`;
+
 const category = ["registration","events","food_and_breverages"]
 
 const AddFaq = () => {

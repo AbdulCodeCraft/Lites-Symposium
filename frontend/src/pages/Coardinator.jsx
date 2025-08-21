@@ -17,7 +17,8 @@ const Coardinator = () => {
   const[error,setError] = useState(null)
 
   useEffect(()=>{
-    const API_URL = "http://localhost:3000/api/coordinators/";
+    const API_URL = `${import.meta.env.VITE_APP_BACKEND_URL}/api/coordinators/`;
+
 
     const fetchCoardinator = async() =>{
       try {

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import AboutContact from "../components/AboutContact.jsx";
 import OrganizerCard from "../components/OrganizerCard.jsx";
 import Layout from "../layout/Layout.jsx";
