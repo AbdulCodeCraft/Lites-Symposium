@@ -22,7 +22,7 @@ import ProtectRoutes from "./ProtectRoutes.jsx";
 import UserDetails from "../pages/admin/UserDetails.jsx";
 import AddCoordinators from "../pages/admin/AddCoordinators.jsx";
 import AddFaq from "../pages/admin/AddFaq.jsx";
-import AddEvents from "../pages/admin/addEvents.jsx";
+import AddEvents from "../pages/admin/AddEvents.jsx";
 
 const AllRoutes = () => {
   return (
