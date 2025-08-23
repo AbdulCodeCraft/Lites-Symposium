@@ -61,7 +61,7 @@ const Coardinator = () => {
       
       
       {!loading && !error && <div className="min-h-screen bg-black pt-15 px-2 md:pt-25 pb-10 md:px-60">
-        <h1 className="text-white font-bold text-2xl md:text-7xl">Coardinators</h1>
+        <h1 className="text-white font-bold text-2xl md:text-5xl">Coardinators</h1>
         <Table title="Overall" tableDatas={overall} overallCoardinator />
         <Table title="Technical Events" tableDatas={technicalEvents} />
         <Table title="Non-Technical Events" tableDatas={nonTechnicalEvents} />

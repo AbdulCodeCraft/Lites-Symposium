@@ -8,7 +8,8 @@ import Loader from "../../components/Loader";
 const FAQs = () => {
   const [faqs, setFaqs] = useState([]);
   const [loading, setLoading] = useState(true);
-  const API_URL = "http://localhost:3000/api/faq";
+
+    const API_URL = `${import.meta.env.VITE_APP_BACKEND_URL}/api/faq/`;
 
   useEffect(() => {
     const fetchFaq = async () => {

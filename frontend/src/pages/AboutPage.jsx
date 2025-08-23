@@ -15,7 +15,7 @@ const AboutPage = () => {
             />
             <div className="absolute inset-0 bg-black/50"></div>
             <h1 className="absolute lg:text-9xl text-white/40 flex justify-center w-full bottom-30 text-3xl md:bottom-120">
-              Our CSE Family
+              OUR CSE FAMILY
             </h1>
           </div>
         </div>
@@ -23,24 +23,30 @@ const AboutPage = () => {
           <div className=" space-y-5">
             <h1 className="text-xl md:text-3xl font-semibold">Our Vision</h1>
             <p className="text-sm md:text-lg">
-              The department aims to enlighten rural students by providing them
-              with access to quality technical education that fosters societal
-              development and encourages entrepreneurship. In addition, it is
-              committed to nurturing interpersonal skills and shaping students
-              into responsible leaders who are dedicated to serving the society.
+              To be a reputed center producing socially committed Computer
+              Engineers with leadership qualities to serve the rural society
             </p>
           </div>
           <div className=" space-y-5 ">
             <h1 className="text-xl md:text-3xl font-semibold">Our Mission</h1>
             <p className="text-sm md:text-lg">
-              The department strives to build competent Computer Engineers
-              equipped with strong professional ethics and entrepreneurial
-              skills. It focuses on inculcating problem-solving abilities and
-              team-building qualities to promote lifelong learning and a deep
-              sense of social responsibility. Additionally, the department aims
-              to produce effective engineers who stay abreast of current
-              industrial advancements through higher education and utilize their
-              expertise to serve the common people.
+              <ul className="space-y-4">
+                <li>
+                  {" "}
+                  DM1: To build Computer Engineers with professional ethics and
+                  entrepreneurship skills.
+                </li>
+                <li>
+                  DM2: To inculcate problem solving and team building skills to
+                  promote lifelong learning with the sense of social
+                  responsibilities.{" "}
+                </li>
+                <li>
+                  DM3: To produce effective Computer Engineers with exposure to
+                  current industrial advancements through higher education and
+                  serve the common people through their expertise
+                </li>
+              </ul>
             </p>
           </div>
         </div>
@@ -74,17 +80,11 @@ const AboutPage = () => {
         <div className="md:p-10 p-4 space-y-6">
           <h1 className="text-xl md:text-3xl font-semibold">Organizers</h1>
           <p className="text-sm md:text-lg">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit Lorem ipsum
-            dolor sit, amet consectetur adipisicing elit. Obcaecati, consequatur
-            nemo! Recusandae repellat quaerat aut. Iure eligendi rem, nesciunt
-            placeat, odit similique modi tempora corrupti sunt dignissimos fuga
-            repudiandae ipsa! Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Ipsa, sit tempora? Architecto unde quae ea perspiciatis
-            maiores commodi, consequuntur ratione itaque expedita veritatis
-            recusandae dolor, suscipit quibusdam officia nihil. Rem!.
-            Consequuntur dolorem mollitia numquam laborum odio? Fugit nisi
-            suscipit, iusto, nesciunt nostrum nobis ex vel temporibus a omnis
-            ratione neque ab tempore?
+            BytCraze 2025, organized by the Department of Computer Science and
+            Engineering, Loyola Institute of Technology and Science (LITES), is
+            powered by our dedicated faculty and student coordinators. With
+            their passion and teamwork, we are excited to bring you an engaging
+            and memorable symposium experience next month.
           </p>
 
           <div className="flex items-center justify-center space-x-3 md:space-x-16">
