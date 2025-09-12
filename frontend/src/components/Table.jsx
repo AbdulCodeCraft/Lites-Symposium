@@ -10,8 +10,8 @@ const Table = (props) => {
         <table className="min-w-full rounded-lg table-auto overflow-hidden  text-center ">
           <thead className="divide-y divide-gray-700">
             <tr className="bg-gray-800 text-white">
-              <th className={tdStyle}>{props.overallCoardinator ? "Coardinator Name" : "Event Name"}</th>
-              <th className={tdStyle}>{props.overallCoardinator ? "Contact Number" : "Coardinator Name"}</th>
+              <th className={tdStyle}>{props.overallCoardinator ? "Coordinator Name" : "Event Name"}</th>
+              <th className={tdStyle}>{props.overallCoardinator ? "Contact Number" : "Coordinator Name"}</th>
               <th className={tdStyle}>{props.overallCoardinator ? "Role" : "Contact Number"}</th>
             </tr>
           </thead>

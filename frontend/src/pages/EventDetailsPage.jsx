@@ -3,13 +3,14 @@ import { Link, useParams } from "react-router-dom";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Loader from "../components/Loader.jsx";
 
 const EventDetailsPage = () => {
   const { id } = useParams();
 
   const [techEventDetails, setTechEventDetails] = useState(null);
 
-  const API_URL = `http://localhost:3000/api/events/${id}`;
+    const API_URL = `${import.meta.env.VITE_APP_BACKEND_URL}/api/events/${id}`;
 
   useEffect(() => {
     const fetchDetails = async () => {
@@ -42,9 +43,7 @@ const EventDetailsPage = () => {
   if (!techEventDetails) {
     return (
       <Layout>
-        <div className="min-h-screen flex items-center justify-center bg-black text-white">
-          <p>No event Found or loading....</p>
-        </div>
+        <Loader/>
       </Layout>
     );
   }

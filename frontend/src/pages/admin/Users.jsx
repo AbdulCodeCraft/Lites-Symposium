@@ -7,7 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const registration = ["Newest First", "Oldest First"];
-const headings = ["username", "e-mail", "Registration Date", "Actions"];
+const headings = ["Username", "E-mail", "Registration Date", "Actions"];
 
 const Users = () => {
   const [userDetails, setUserDetails] = useState([]);
@@ -92,7 +92,7 @@ const Users = () => {
       {loading && <Loader />}
       {!loading && (
         <div className="lg:space-y-7 space-y-5 p-2">
-          <h1 className="text-2xl font-semibold">Registered User</h1>
+          <h1 className="text-4xl font-semibold">Registered User</h1>
 
           <div className="flex space-x-6">
             <Dropdown

@@ -11,18 +11,12 @@ const HomePage = () => {
 
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative top-10 z-10 flex flex-col gap-4 items-center pt-50 min-h-screen text-white">
-          <h1 className="text-3xl md:text-8xl font-bold">Byte_Craze'25</h1>
+          {/* <h1 className="text-3xl md:text-8xl font-bold">Byte_Craze'25</h1> */}
+          <img src="/logo.png" alt="" className="lg:h-40 "/>
           <p className=" text-center text-sm md:text-xl md:w-200">
-            Welcome to BytCraze 2025 – the premier{" "}
-            <span className="font-bold">
-              National Level Technical Symposium
-            </span>{" "}
-            organized by the Department of Computer Science and Engineering, Loyola Institute of Technology and Science.
+           Welcome to BytCraze 2025 – the premier <span className="font-bold">National Level Technical Symposium</span> organized by the Department of Computer Science and Engineering.
           </p>
-          <Link
-            to={"/register"}
-            className=" border-2 border-yellow-400 text-white px-10 py-3 hover:bg-yellow-400 transition-all duration-300 ease-in hover:text-black rounded-md"
-          >
+          <Link to={"/register"} className=" border-2 border-yellow-400 text-white px-10 py-3 hover:bg-yellow-400 transition-all duration-300 ease-in hover:text-black rounded-md">
             Regiter Now
           </Link>
         </div>
@@ -33,7 +27,7 @@ const HomePage = () => {
         <CountDownTimer />
         <h1>October 17 , 10:00 PM</h1>
 
-        <MapCard />
+      <MapCard/>
       </div>
     </Layout>
   );

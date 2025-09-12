@@ -13,9 +13,15 @@ const AboutContact = () => {
         <button className="bg-blue-500 transition-all text-sm md:text-lg duration-300 hover:bg-blue-600 text-white rounded-xl px-2 py-1 md:px-4 md:py-2">
           Email Us
         </button>
-        <button className="bg-gray-500 transition-all text-sm md:text-lg duration-300 hover:bg-gray-600 text-white rounded-xl  px-2 py-1 md:px-4 md:py-2">
-          Follow Us
-        </button>
+        <a
+          href="https://www.instagram.com/bytecraze2k25?igsh=MW5odGowcjRwZ2gxYw=="
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button className="bg-gray-500 transition-all text-sm md:text-lg duration-300 hover:bg-gray-600 text-white rounded-xl px-2 py-1 md:px-4 md:py-2">
+            Follow Us
+          </button>
+        </a>
       </div>
     </div>
   );

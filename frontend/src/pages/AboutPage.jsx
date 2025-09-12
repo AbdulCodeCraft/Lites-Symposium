@@ -19,9 +19,9 @@ const AboutPage = () => {
             </h1>
           </div>
         </div>
-        <div className="md:p-10 p-4 space-y-6">
+        <div className="md:p-10 p-4 space-y-6 text-center">
           <div className=" space-y-5">
-            <h1 className="text-xl md:text-3xl font-semibold">Our Vision</h1>
+            <h1 className="text-xl md:text-3xl font-semibold ">Our Vision</h1>
             <p className="text-sm md:text-lg">
               To be a reputed center producing socially committed Computer
               Engineers with leadership qualities to serve the rural society
@@ -50,7 +50,7 @@ const AboutPage = () => {
             </p>
           </div>
         </div>
-        <div className="md:p-10 p-4 flex justify-center items-center">
+        <div className="md:p-10 p-4 flex justify-center items-center ">
           <div className="relative md:w-3/4 md:h-150 rounded-md flex gap-1 md:gap-2 overflow-hidden">
             <div className="w-1/3 md:h-full">
               <img
@@ -77,7 +77,7 @@ const AboutPage = () => {
             </div>
           </div>
         </div>
-        <div className="md:p-10 p-4 space-y-6">
+        <div className="md:p-10 p-4 space-y-6 text-center">
           <h1 className="text-xl md:text-3xl font-semibold">Organizers</h1>
           <p className="text-sm md:text-lg">
             BytCraze 2025, organized by the Department of Computer Science and

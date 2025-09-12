@@ -10,7 +10,7 @@ const Coordinator = () => {
   const [coordinatorDetails, setCoordinatorDetails] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const API_URL = `${import.meta.env.VITE_APP_BACKEND_URL}/api/coordinators/`;
+  const API_URL = `${import.meta.env.VITE_APP_BACKEND_URL}/api/coordinators`;
 
   useEffect(() => {
     const fetchCoordinators = async () => {

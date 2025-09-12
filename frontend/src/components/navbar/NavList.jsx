@@ -6,7 +6,7 @@ const NavList = () => {
     <ul className="flex flex-col items-center lg:flex-row p-5 lg:p-0 gap-7">
           <li className={listStyle}><Link to={"/"}>Home</Link></li>
           <li className={listStyle}><Link to={"/about"}>About Us</Link></li>
-          <li className={listStyle}><Link to={"/coardinators"}>Coardinators</Link></li>
+          <li className={listStyle}><Link to={"/coardinators"}>Coordinators</Link></li>
           <li className={listStyle}><Link to={"/events"}>Events</Link></li>
           <li className={listStyle}><Link to={"/faq"}>FAQ's</Link></li>
           <li className={listStyle}><Link to={"/admin/login"}>Admin</Link></li>

@@ -19,7 +19,7 @@ const EventCard = ({ title, events }) => {
               <div className="absolute inset-0  transition-opacity duration-300 rounded-lg group-hover:bg-black/50">
                 <Link
                   to={"/events/" + event.id}
-                  className="absolute inset-0 px-4 py-2 m-auto w-fit h-fit rounded-md shadow-2xl transition-opacity duration-300 bg-yellow-500 opacity-0 group-hover:opacity-100"
+                  className="absolute inset-0 px-4 py-2 m-auto w-fit h-fit rounded-md shadow-2xl transition-opacity duration-300 bg-violet-500 opacity-0 group-hover:opacity-100"
                 >
                   View Details
                 </Link>

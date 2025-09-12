@@ -6,21 +6,21 @@ import Layout from "../layout/Layout";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 
-const food = ["", "Vegetarian", "Non-Vegetarian"];
-const year = ["", "4th Year", "3rd Year", "2nd Year", "1st Year"];
-const know = ["", "Friends", "College", "Instagram", "LinkedIn"];
-const gender = ["", "Male", "Female"];
+const food = [ "Vegetarian", "Non-Vegetarian"];
+const year = ["4th Year", "3rd Year", "2nd Year", "1st Year"];
+const know = ["Friends", "College", "Instagram", "LinkedIn"];
+const gender = ["Male", "Female"];
 const technicalEvents = [
-  "Paper Presentation",
-  "Web Design",
-  "Code Relay",
-  "Code Debugging",
+  "Byte Talks (Paper Presentation)",
+  "RuntimeFixer (HackerRank Coding)",
+  "TechWhiz (Technical Quiz)",
+  "WebWeavers (Web Design)",
 ];
 const nonTechnicalEvents = [
-  "Paper Presentation",
-  "Web Design",
-  "Code Relay",
-  "Code Debugging",
+  "Beat the Floor (Solo Dance)",
+  "Voice of Both Sides (Plus and Minus)",
+  "SnapRecall (Photographic Memory)",
+  "Link-Up (Connection)",
 ];
 
 const RegisterPage = () => {
