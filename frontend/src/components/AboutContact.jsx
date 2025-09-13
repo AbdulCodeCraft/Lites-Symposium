@@ -10,9 +10,13 @@ const AboutContact = () => {
         assist you and ensure your symposium experience is smooth and memorable.
       </p>
       <div className="space-x-4">
-        <button className="bg-blue-500 transition-all text-sm md:text-lg duration-300 hover:bg-blue-600 text-white rounded-xl px-2 py-1 md:px-4 md:py-2">
+        <a
+          href="mailto:limca2k18@gmail.com"
+          className="bg-blue-500 transition-all text-sm md:text-lg duration-300 hover:bg-blue-600 text-white rounded-xl px-2 py-1 md:px-4 md:py-2"
+        >
           Email Us
-        </button>
+        </a>
+
         <a
           href="https://www.instagram.com/bytecraze2k25?igsh=MW5odGowcjRwZ2gxYw=="
           target="_blank"
