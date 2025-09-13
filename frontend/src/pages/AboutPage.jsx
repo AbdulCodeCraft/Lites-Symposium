@@ -103,6 +103,11 @@ const AboutPage = () => {
               name="Keerthika K"
               role="Student Coardinator"
             />
+            <OrganizerCard
+              image="/images/keerthika.jpg"
+              name="Keerthika K"
+              role="Student Coardinator"
+            />
           </div>
         </div>
         <div className="md:p-10 p-4">
