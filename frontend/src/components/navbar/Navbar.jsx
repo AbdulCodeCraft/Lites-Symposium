@@ -11,7 +11,7 @@ const Navbar = () => {
       <div>
         <Link to={"/"}>
           {/* <h1 className="text-2xl">Byte_Craze</h1> */}
-          <img src="/public/nav-logo.png" alt="" className="h-9" />
+          <img src="/nav-logo.png" alt="" className="h-9" />
           
         </Link>
       </div>
