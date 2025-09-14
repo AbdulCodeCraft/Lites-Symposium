@@ -13,7 +13,7 @@ const HomePage = () => {
         <div className="relative top-10 z-10 flex flex-col gap-4 items-center pt-50 min-h-screen text-white">
           {/* <h1 className="text-3xl md:text-8xl font-bold">Byte_Craze'25</h1> */}
           <img src="/logo.png" alt="" className="lg:h-40 " />
-          <p className=" text-center text-sm md:text-xl md:w-200">
+          <p className="font-jost text-center text-sm md:text-xl md:w-200">
             Welcome to BytCraze 2025 – the premier{" "}
             <span className="font-bold">
               National Level Technical Symposium
