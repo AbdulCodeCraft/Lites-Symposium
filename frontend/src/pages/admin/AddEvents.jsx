@@ -126,12 +126,12 @@ const AddEvents = () => {
         />
         <TextArea
           label="Rules"
-          placeholder="Enter rules separated by commas"
+          placeholder="Enter rules separated by | Symbol"
           value={formData.rules.join(", ")}
           onChange={(e) =>
             setFormData((prevData) => ({
               ...prevData,
-              rules: e.target.value.split(",").map((rule) => rule.trim()),
+              rules: e.target.value.split("|").map((rule) => rule.trim()),
             }))
           }
           name="rules"

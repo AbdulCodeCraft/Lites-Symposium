@@ -32,7 +32,7 @@ const HomePage = () => {
       <div className="flex flex-col items-center gap-3  bg-black bg-no-repeat bg-cover text-white min-h-screen">
         <h1 className="text-lg md:text-2xl">The Event Starts In</h1>
         <CountDownTimer />
-        <h1>October 17 , 10:00 AM</h1>
+        <h1>October 09 , 10:00 AM</h1>
 
         <MapCard />
       </div>

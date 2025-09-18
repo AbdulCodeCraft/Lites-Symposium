@@ -76,7 +76,8 @@ const Coordinator = () => {
     }
   };
 
-  console.log(coordinatorDetails);
+  
+
 
   return (
     <div className="">

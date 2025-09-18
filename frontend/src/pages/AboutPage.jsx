@@ -1,8 +1,10 @@
+import { use, useState } from "react";
 import AboutContact from "../components/AboutContact.jsx";
 import OrganizerCard from "../components/OrganizerCard.jsx";
 import Layout from "../layout/Layout.jsx";
 
 const AboutPage = () => {
+  const[loading,setLoading] = useState(true);
   return (
     <Layout>
       <div className="relative min-h-screen bg-black text-white">
@@ -29,7 +31,7 @@ const AboutPage = () => {
           </div>
           <div className=" space-y-5 ">
             <h1 className="text-xl md:text-3xl font-semibold">Our Mission</h1>
-            <p className="text-sm md:text-lg">
+           
               <ul className="space-y-4">
                 <li>
                   {" "}
@@ -47,7 +49,7 @@ const AboutPage = () => {
                   serve the common people through their expertise
                 </li>
               </ul>
-            </p>
+          
           </div>
         </div>
         <div className="md:p-10 p-4 flex justify-center items-center ">

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const CountDownEndTime = new Date("2025-10-17T12:00:00Z").getTime();
+const CountDownEndTime = new Date("2025-10-09T12:00:00Z").getTime();
 
 const CountDownTimer = () => {
 
