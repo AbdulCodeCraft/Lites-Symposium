@@ -75,7 +75,7 @@ const RegisterPage = () => {
           gender: "",
         });
       } else {
-        alert(response.data.error || "Registration failed."); // fallback
+        alert(response.data.error || "Registration failed."); 
       }
     } catch (error) {
       console.error("Registration Failed:", error.response?.data || error.message);

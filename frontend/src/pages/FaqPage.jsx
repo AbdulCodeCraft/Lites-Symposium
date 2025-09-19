@@ -48,7 +48,7 @@
               <FaqDropDown title="Registration" events={faq.registration} />
               <FaqDropDown title="Events" events={faq.events} />
               <FaqDropDown
-                title="Food And Breverages"
+                title="Food And Beverages"
                 events={faq.food_and_breverages}
               />
             </div>

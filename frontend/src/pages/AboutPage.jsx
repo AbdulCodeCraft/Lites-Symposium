@@ -96,14 +96,14 @@ const AboutPage = () => {
               role="Student Coardinator"
             />
             <OrganizerCard
-              image="/images/suji.png"
-              name="Suji Andreas"
+              image="/images/suji.jpg"
+              name="Suji Andreas M"
               role="Staff Coardinator"
             />
             <OrganizerCard
-              image="/images/keerthika.jpg"
-              name="Keerthika K"
-              role="Student Coardinator"
+              image="/images/ida.jpg"
+              name="Merry Ida A"
+              role="The Convenor"
             />
             <OrganizerCard
               image="/images/keerthika.jpg"
