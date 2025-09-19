@@ -40,7 +40,7 @@ const RegisterPage = () => {
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
-  const API_URL = `${import.meta.env.VITE_APP_BACKEND_URL}/api/register/`;
+  const API_URL = `${import.meta.env.VITE_APP_BACKEND_URL}/api/register`;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -59,7 +59,7 @@ const RegisterPage = () => {
       const response = await axios.post(API_URL, formData);
 
       if (response.data.success) {
-        setShowModal(true); // ✅ show modal instead of toast
+        setShowModal(true);
 
         setFormData({
           fullName: "",
@@ -75,10 +75,13 @@ const RegisterPage = () => {
           gender: "",
         });
       } else {
-        alert(response.data.error || "Registration failed."); 
+        alert(response.data.error || "Registration failed.");
       }
     } catch (error) {
-      console.error("Registration Failed:", error.response?.data || error.message);
+      console.error(
+        "Registration Failed:",
+        error.response?.data || error.message
+      );
       alert("An unexpected error occurred during registration.");
     } finally {
       setLoading(false);
@@ -96,32 +99,119 @@ const RegisterPage = () => {
           </p>
         </div>
         <form onSubmit={handleSubmit}>
-          <Input name="fullName" value={formData.fullName} placeholder="Enter your full name" label="Full Name" onChange={handleChange} />
-          <Input name="email" value={formData.email} placeholder="Enter your e-mail Address" label="E-mail" onChange={handleChange} />
-          <Input name="mobileNumber" value={formData.mobileNumber} placeholder="Enter your mobile number" label="Mobile Number" onChange={handleChange} />
-          <Input name="college" value={formData.college} placeholder="Enter your college name" label="College" onChange={handleChange} />
-          <Input name="department" value={formData.department} placeholder="Enter your department" label="Department" onChange={handleChange} />
+          <Input
+            name="fullName"
+            value={formData.fullName}
+            placeholder="Enter your full name"
+            label="Full Name"
+            onChange={handleChange}
+          />
+          <Input
+            name="email"
+            value={formData.email}
+            placeholder="Enter your e-mail Address"
+            label="E-mail"
+            onChange={handleChange}
+          />
+          <Input
+            name="mobileNumber"
+            value={formData.mobileNumber}
+            placeholder="Enter your mobile number"
+            label="Mobile Number"
+            onChange={handleChange}
+          />
+          <Input
+            name="college"
+            value={formData.college}
+            placeholder="Enter your college name"
+            label="College"
+            onChange={handleChange}
+          />
+          <Input
+            name="department"
+            value={formData.department}
+            placeholder="Enter your department"
+            label="Department"
+            onChange={handleChange}
+          />
 
-          <Options label="Year of study" options={year} name="yearOfStudy" value={formData.yearOfStudy} onChange={handleChange} />
+          <Options
+            label="Year of study"
+            options={year}
+            name="yearOfStudy"
+            value={formData.yearOfStudy}
+            onChange={handleChange}
+          />
 
-          <CheckList title="Technical Event" lists={technicalEvents} name="technicalEvents" onChange={handleCheckListChange} selectedValues={formData.technicalEvents} />
-          <CheckList title="Non-Technical Event" lists={nonTechnicalEvents} name="nonTechnicalEvents" onChange={handleCheckListChange} selectedValues={formData.nonTechnicalEvents} />
+          <CheckList
+            title="Technical Event"
+            lists={technicalEvents}
+            name="technicalEvents"
+            onChange={handleCheckListChange}
+            selectedValues={formData.technicalEvents}
+          />
+          <CheckList
+            title="Non-Technical Event"
+            lists={nonTechnicalEvents}
+            name="nonTechnicalEvents"
+            onChange={handleCheckListChange}
+            selectedValues={formData.nonTechnicalEvents}
+          />
 
-          <Options label="How did you know about the event?" options={know} name="howDidYouKnow" value={formData.howDidYouKnow} onChange={handleChange} />
-          <Options label="Food Preferences" options={food} name="foodPreferences" value={formData.foodPreferences} onChange={handleChange} />
-          <Options label="Gender" options={gender} name="gender" value={formData.gender} onChange={handleChange} />
+          <Options
+            label="How did you know about the event?"
+            options={know}
+            name="howDidYouKnow"
+            value={formData.howDidYouKnow}
+            onChange={handleChange}
+          />
+          <Options
+            label="Food Preferences"
+            options={food}
+            name="foodPreferences"
+            value={formData.foodPreferences}
+            onChange={handleChange}
+          />
+          <Options
+            label="Gender"
+            options={gender}
+            name="gender"
+            value={formData.gender}
+            onChange={handleChange}
+          />
 
           <button
             type="submit"
-            className="md:w-1/2 bg-blue-400 md:py-2 md:px-0 px-3 py-2 rounded-lg hover:bg-blue-600 transition-all duration-300"
+            className="md:w-1/2 bg-blue-400 md:py-2 md:px-0 px-3 py-2 rounded-lg hover:bg-blue-600 transition-all duration-300 flex items-center justify-center gap-2"
             disabled={loading}
           >
+            {loading && (
+              <svg
+                className="animate-spin h-5 w-5 text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                ></circle>
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8v8H4z"
+                ></path>
+              </svg>
+            )}
             {loading ? "Submitting..." : "Submit Registration"}
           </button>
         </form>
       </div>
 
-      {/* ✅ Success Modal */}
       {showModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/70 z-50">
           <div className="bg-white text-black p-6 rounded-2xl shadow-lg w-96 text-center">
