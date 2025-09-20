@@ -28,7 +28,7 @@ const Users = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [eventFilter, setEventFilter] = useState(events[0]);
 
-  const API_URL = `${import.meta.env.VITE_APP_BACKEND_URL}/api/user/`;
+  const API_URL = `${import.meta.env.VITE_APP_BACKEND_URL}/api/user`;
 
   useEffect(() => {
     const fetchUsers = async () => {
