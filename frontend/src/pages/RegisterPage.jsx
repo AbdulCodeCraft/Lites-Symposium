@@ -47,9 +47,21 @@ const RegisterPage = () => {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleCheckListChange = (name, listValue) => {
-    setFormData((prevData) => ({ ...prevData, [name]: listValue }));
-  };
+ const handleCheckListChange = (name, listValue) => {
+  
+  if (name === "technicalEvents" && listValue.length > 2) {
+    alert("You can select only 2 Technical Events.");
+    return;
+  }
+
+  if (name === "nonTechnicalEvents" && listValue.length > 2) {
+    alert("You can select only 2 Non-Technical Events.");
+    return;
+  }
+
+  setFormData((prevData) => ({ ...prevData, [name]: listValue }));
+};
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();

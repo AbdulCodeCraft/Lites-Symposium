@@ -5,7 +5,7 @@ const Table = (props) => {
 
   return (
     <div className="text-white pt-10 space-y-3 ">
-      <h1 className="text-xl md:text-2xl font-semibold">{props.title} Coardinators</h1>
+      <h1 className="text-xl md:text-2xl font-semibold">{props.title} Coordinators</h1>
       <div className="border-1 border-gray-700 rounded-lg">
         <table className="min-w-full rounded-lg table-auto overflow-hidden  text-center ">
           <thead className="divide-y divide-gray-700">

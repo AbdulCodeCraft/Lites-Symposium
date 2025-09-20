@@ -12,7 +12,7 @@ const AboutContact = () => {
       <div className="space-x-4">
         <a
           href="mailto:limca2k18@gmail.com"
-          className="bg-blue-500 transition-all text-sm md:text-lg duration-300 hover:bg-blue-600 text-white rounded-xl px-2 py-1 md:px-4 md:py-2"
+          className="bg-blue-500 transition-all text-sm md:text-lg duration-300 hover:bg-blue-600 text-white rounded-xl px-2 py-1 md:px-4 md:py-3"
         >
           Email Us
         </a>

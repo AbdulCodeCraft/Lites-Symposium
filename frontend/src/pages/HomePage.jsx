@@ -18,7 +18,7 @@ const HomePage = () => {
             <span className="font-bold">
               National Level Technical Symposium
             </span>{" "}
-            organized by the Department of Computer Science and Engineering, Loyola Institute of Technology and Science.
+            organized by the Department of Computer Science and Engineering & (AIML), Loyola Institute of Technology and Science.
           </p>
           <Link
             to={"/register"}
