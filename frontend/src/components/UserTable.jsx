@@ -21,10 +21,10 @@ const RegisteredUsers = ({ headings, users, onDelete }) => {
           </tr>
         </thead>
         <tbody className="text-center">
-          {/* We now use the 'index' from the map function */}
+     
           {users.map((user, index) => (
             <tr key={user._id} className="border-b border-gray-700 ">
-              {/* This new cell displays the index number (starting from 1) */}
+            
               <td className="py-5">{index + 1}</td> 
               <td className="py-5">{user.fullName}</td>
               <td className="text-center hidden lg:table-cell">{user.email}</td>
