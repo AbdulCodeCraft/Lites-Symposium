@@ -4,11 +4,9 @@ import Dropdown from "../../components/Dropdown.jsx";
 import Loader from "../../components/Loader.jsx";
 import UserTable from "../../components/UserTable.jsx";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 const registration = ["Newest First", "Oldest First"];
 const headings = ["Username", "E-mail", "Registration Date", "Actions"];
-
 const events = [
   "All Events",
   "Byte Talks (Paper Presentation)",
@@ -20,6 +18,7 @@ const events = [
   "SnapRecall (Photographic Memory)",
   "Link-Up (Connection)",
 ];
+const foodPreferences = ["All", "Vegetarian", "Non-Vegetarian"];
 
 const Users = () => {
   const [userDetails, setUserDetails] = useState([]);
@@ -27,6 +26,7 @@ const Users = () => {
   const [filter, setFilter] = useState(registration[0]);
   const [searchQuery, setSearchQuery] = useState("");
   const [eventFilter, setEventFilter] = useState(events[0]);
+  const [foodFilter, setFoodFilter] = useState(foodPreferences[0]); // New state for food filter
 
   const API_URL = `${import.meta.env.VITE_APP_BACKEND_URL}/api/user`;
 
@@ -35,7 +35,6 @@ const Users = () => {
       try {
         const response = await axios.get(API_URL);
         const data = response.data;
-
         if (data.success) {
           setUserDetails(data.user);
         }
@@ -51,11 +50,9 @@ const Users = () => {
   const handleFilterChange = (selectedValue) => {
     setFilter(selectedValue);
   };
-
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
   };
-
   const handleEventFilterChange = (selectedValue) => {
     setEventFilter(selectedValue);
   };
@@ -78,12 +75,10 @@ const Users = () => {
     ) {
       return;
     }
-
     try {
       displayMessage("Deleting user...", "info");
       const response = await axios.delete(`${API_URL}/${userId}`);
       const data = response.data;
-
       if (data.success) {
         setUserDetails((prevUsers) =>
           prevUsers.filter((user) => user._id !== userId)
@@ -113,13 +108,15 @@ const Users = () => {
     const isNameMatch = user.fullName
       ?.toLowerCase()
       .includes(searchQuery.toLowerCase());
-
     const isEventMatch =
       eventFilter === "All Events" ||
       (user.technicalEvents && user.technicalEvents.includes(eventFilter)) ||
-      (user.nonTechnicalEvents && user.nonTechnicalEvents.includes(eventFilter));
-
-    return isNameMatch && isEventMatch;
+      (user.nonTechnicalEvents &&
+        user.nonTechnicalEvents.includes(eventFilter));
+    const isFoodMatch =
+      foodFilter === "All" ||
+      (user.foodPreferences && user.foodPreferences === foodFilter);
+    return isNameMatch && isEventMatch && isFoodMatch;
   });
 
   return (
@@ -128,12 +125,10 @@ const Users = () => {
       {!loading && (
         <div className="lg:space-y-7 space-y-5 p-2">
           <h1 className="text-4xl font-semibold">Registered User</h1>
-          
-          {/* Display the total count of registered participants */}
           <div className="text-lg font-medium text-gray-400">
-            Total Participants: <span className="text-white">{userDetails.length}</span>
+            Total Participants:{" "}
+            <span className="text-white">{userDetails.length}</span>
           </div>
-
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:space-x-6 space-y-4 lg:space-y-0">
             <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4">
               <Dropdown
@@ -148,8 +143,14 @@ const Users = () => {
                 options={events}
                 onChange={(e) => handleEventFilterChange(e.target.value)}
               />
+              {/* New Dropdown for Food Preferences */}
+              <Dropdown
+                label="Filter By Food"
+                value={foodFilter}
+                options={foodPreferences}
+                onChange={(e) => setFoodFilter(e.target.value)}
+              />
             </div>
-            
             <div className="w-full lg:w-auto">
               <input
                 type="text"
@@ -160,7 +161,6 @@ const Users = () => {
               />
             </div>
           </div>
-
           <div>
             <UserTable
               headings={headings}
@@ -168,7 +168,6 @@ const Users = () => {
               onDelete={handleDeleteUser}
             />
           </div>
-
           <ToastContainer position="top-right" autoClose={3000} />
         </div>
       )}
