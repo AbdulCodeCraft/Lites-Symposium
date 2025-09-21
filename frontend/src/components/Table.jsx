@@ -1,7 +1,7 @@
 
 const tdStyle = "text-sm px-2 py-4 md:px-6 md:py-4 md:text-md"
 const Table = (props) => {
-  console.log(props.tableDatas);
+
 
   return (
     <div className="text-white pt-10 space-y-3 ">
@@ -18,7 +18,7 @@ const Table = (props) => {
           <tbody className="divide-y divide-gray-700">
             {props.tableDatas.map((item) => {
               return (
-                <tr>
+                <tr key={item._id} className="hover:bg-gray-700">
                   <td className={tdStyle}>{props.overallCoardinator ? item.Coordinator_name : item.event_name}</td>
                   <td className={tdStyle}>{props.overallCoardinator ? item.contact_number : item.Coordinator_name}</td>
                   <td className={tdStyle}>{props.overallCoardinator ? item.event_name : item.contact_number}</td>

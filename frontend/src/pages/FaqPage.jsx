@@ -7,7 +7,7 @@
   const FaqPage = () => {
     const [faq, setFaq] = useState([]);
     const [loading, setLoading] = useState(true);
-    console.log(import.meta.env.VITE_APP_BACKEND_URL);
+    
     
     
     const API_URL = `${import.meta.env.VITE_APP_BACKEND_URL}/api/faq/`;
@@ -29,7 +29,7 @@
       fetchFaq();
     }, []);
 
-    console.log(faq);
+    
 
     return (
       <div>

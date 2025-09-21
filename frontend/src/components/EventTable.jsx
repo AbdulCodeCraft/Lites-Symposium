@@ -21,23 +21,27 @@ const EventTable = ({ events, headings, onDelete }) => {
           {events.map((event) => (
             <tr key={event.id} className="border-b border-gray-700 ">
               <td className="py-5">{event.event_name}</td>
-              <td className="text-center hidden lg:table-cell">{event.event_description}</td>
+              <td className="text-center hidden lg:table-cell">
+                {event.event_description}
+              </td>
               <td>{event.type}</td>
 
-              <td className="space-x-3">
-                <Link
-                  className="bg-green-500 px-2 py-1 rounded-md cursor-pointer"
-                  to={`/admin/events/edit-event/${event.id}`}
-                >
-                  Edit
-                </Link>
-
-                <button
-                  onClick={() => onDelete(event.id)}
-                  className="bg-red-500 px-2 rounded-md cursor-pointer"
-                >
-                  Delete
-                </button>
+              {/* The Fix: Use Flexbox within a div, not on the td */}
+              <td className="px-3">
+                <div className="flex items-center justify-center space-x-3">
+                  <Link
+                    className="bg-green-500 px-2 py-1 rounded-md cursor-pointer"
+                    to={`/admin/events/edit-event/${event.id}`}
+                  >
+                    Edit
+                  </Link>
+                  <button
+                    onClick={() => onDelete(event.id)}
+                    className="bg-red-500 px-2 rounded-md cursor-pointer"
+                  >
+                    Delete
+                  </button>
+                </div>
               </td>
             </tr>
           ))}

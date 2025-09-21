@@ -8,7 +8,13 @@ const AdminNavbar = ({ onMenuClick }) => {
         <FiMenu />
       </button>
 
-      <h1 className="text-xl font-semibold text-white">Symposium Admin</h1>
+     <div className="flex items-center gap-3">
+        
+          {/* <h1 className="text-2xl">Byte_Craze</h1> */}
+          <img src="/nav-logo.png" alt="" className="h-9" />
+          <h1 className="text-gray-300 font-bold text-xl">Admin Panel</h1>
+
+      </div>
 
       <div className="w-6"></div>
     </div>

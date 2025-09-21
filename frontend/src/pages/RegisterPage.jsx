@@ -232,9 +232,9 @@ const RegisterPage = () => {
               Thank you for registering! <br />
               For further details, join our WhatsApp group.
             </p>
-            {/* Later you will replace # with actual WhatsApp link */}
+           
             <a
-              href="#"
+              href="https://chat.whatsapp.com/FI0p7biNdQn10eTHPcTN4o"
               target="_blank"
               rel="noopener noreferrer"
               className="block bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 mb-3"

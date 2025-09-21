@@ -4,12 +4,14 @@ import { ToastContainer, toast } from "react-toastify";
 import { auth } from "../Firebase";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { Eye, EyeOff } from "lucide-react";
 
 const AdminLogin = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -17,7 +19,6 @@ const AdminLogin = () => {
         navigate("/admin", { replace: true });
       }
     });
-
     return () => unsubscribe();
   }, [navigate]);
 
@@ -30,23 +31,14 @@ const AdminLogin = () => {
         email,
         password
       );
-     
+
       toast.success("Admin login successful! Redirecting...", {
         position: "top-center",
         autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
       });
-      const user = userCredential.user.email;
-      console.log(user);
-
-    
 
       setTimeout(() => {
-        navigate("/admin", { replace: true }); 
+        navigate("/admin", { replace: true });
       }, 1000);
     } catch (error) {
       console.error(`Admin Login Error : ${error.code} ${error.message}`);
@@ -61,60 +53,65 @@ const AdminLogin = () => {
       } else if (error.code === "auth/too-many-requests") {
         errorMessage = "Too many login attempts. Please try again later.";
       }
-
       toast.error(errorMessage, {
         position: "top-center",
         autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
       });
     } finally {
       setLoading(false);
     }
   };
+
   return (
     <Layout>
       <ToastContainer />
-      <div className="min-h-screen flex justify-center items-center bg-black text-white">
+      <div className="min-h-screen flex justify-center items-center bg-black text-white px-4">
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col space-y-4 justify-center items-center bg-gray-800 md:h-100 p-5 md:p-0 rounded-lg md:w-1/2 "
+          className="flex flex-col space-y-5 bg-gray-900 w-full max-w-md p-8 rounded-2xl shadow-lg border border-gray-700"
         >
-          <h2 className="text-gray-200 text-2xl md:text-3xl font-semibold">
+          <h2 className="text-gray-100 text-3xl font-bold text-center mb-4">
             Admin Login
           </h2>
 
+          {/* Email Input */}
           <input
-            className="px-3 py-3 bg-gray-600 rounded-lg md:w-1/2"
-            type="email" 
+            className="px-4 py-3 bg-gray-800 rounded-lg w-full border border-gray-700 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            type="email"
             name="email"
             value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-            placeholder="Enter E-mail"
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter Email"
             required
           />
-          <input
-            className="px-3 py-3 bg-gray-600 rounded-lg md:w-1/2"
-            type="password" 
-            placeholder="Enter Password"
-            name="password"
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-            required
-          />
+
+       
+          <div className="relative w-full">
+            <input
+              className="px-4 py-3 bg-gray-800 rounded-lg w-full border border-gray-700 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              type={showPassword ? "text" : "password"}
+              name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter Password"
+              required
+            />
+            <button
+              type="button"
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+            </button>
+          </div>
+
+     
           <button
             type="submit"
-            className="bg-blue-400 px-8 rounded-lg hover:bg-blue-500 py-2"
+            className="w-full bg-blue-500 hover:bg-blue-600 py-3 rounded-lg font-semibold transition-all duration-300 disabled:opacity-50"
             disabled={loading}
           >
-            {loading ? "Logging in...." : "Login"}
+            {loading ? "Logging in..." : "Login"}
           </button>
         </form>
       </div>
