@@ -97,12 +97,12 @@ const AboutPage = () => {
             <OrganizerCard
               image="/images/suji.jpg"
               name="Suji Andreas M"
-              role="Staff Coordinator"
+              role="Symposium Coordinator"
             />
             <OrganizerCard
               image="/images/ida.jpg"
               name="Merry Ida A"
-              role="The Convenor"
+              role="Convenor"
             />
             <OrganizerCard
               image="/images/keerthika.jpg"

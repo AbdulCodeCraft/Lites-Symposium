@@ -11,14 +11,14 @@ const headings = ["Username", "E-mail", "Registration Date", "Actions"];
 
 const events = [
   "All Events",
-  "ByteTalks (Paper Presentation)",
-  "RuntimeFixer (Hackerrank Coding)",
+  "Byte Talks (Paper Presentation)",
+  "RuntimeFixer (HackerRank Coding)",
   "TechWhiz (Technical Quiz)",
-  "WebWeavers (Web Designing)",
+  "WebWeavers (Web Design)",
   "Beat the Floor (Solo Dance)",
   "Voice of Both Sides (Plus and Minus)",
   "SnapRecall (Photographic Memory)",
-  "Link - Up (Connection)",
+  "Link-Up (Connection)",
 ];
 
 const Users = () => {
