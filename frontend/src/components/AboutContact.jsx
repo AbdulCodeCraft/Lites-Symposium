@@ -5,7 +5,7 @@ const AboutContact = () => {
     <div className="space-y-6 ">
       <h1 className="text-xl md:text-3xl font-semibold">Contact Us</h1>
       <p className="text-sm md:text-lg">
-        If you have any doubts, queries, or need more information about BytCraze
+        If you have any doubts, queries, or need more information about ByteCraze
         2025, feel free to reach out to our organizing team. We’re here to
         assist you and ensure your symposium experience is smooth and memorable.
       </p>

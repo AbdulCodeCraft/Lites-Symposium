@@ -81,7 +81,7 @@ const AboutPage = () => {
         <div className="md:p-10 p-4 space-y-6 text-center">
           <h1 className="text-xl md:text-3xl font-semibold">Organizers</h1>
           <p className="text-sm md:text-lg">
-            BytCraze 2025, organized by the Department of Computer Science and
+            ByteCraze 2025, organized by the Department of Computer Science and
             Engineering, Loyola Institute of Technology and Science (LITES), is
             powered by our dedicated faculty and student coordinators. With
             their passion and teamwork, we are excited to bring you an engaging

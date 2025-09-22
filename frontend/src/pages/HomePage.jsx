@@ -14,7 +14,7 @@ const HomePage = () => {
           {/* <h1 className="text-3xl md:text-8xl font-bold">Byte_Craze'25</h1> */}
           <img src="/logo.png" alt="" className="lg:h-40 " />
           <p className="font-jost text-center text-sm md:text-xl md:w-200">
-            Welcome to BytCraze 2025 – the premier{" "}
+            Welcome to ByteCraze 2025 – the premier{" "}
             <span className="font-bold">
               National Level Technical Symposium
             </span>{" "}
@@ -24,7 +24,7 @@ const HomePage = () => {
             to={"/register"}
             className=" border-2 border-yellow-400 text-white px-10 py-3 hover:bg-yellow-400 transition-all duration-300 ease-in hover:text-black rounded-md"
           >
-            Regiter Now
+            Register Now
           </Link>
         </div>
       </div>
