@@ -19,7 +19,7 @@ const nonTechnicalEvents = [
   "Beat the Floor (Solo Dance)",
   "Voice of Both Sides (Plus and Minus)",
   "SnapRecall (Photographic Memory)",
-  "Link-Up (Connection)",
+  "Frame the Link (Connection)",
 ];
 
 const RegisterPage = () => {

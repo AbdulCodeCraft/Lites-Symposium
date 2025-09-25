@@ -7,7 +7,7 @@ const CoordinatorTable = ({ headings, datas,onDelete }) => {
         <thead className="sticky top-0 bg-gray-700 h-12">
           <tr>
              {headings.map((heading, index) => (
-              <th
+              <th 
                 key={index}
                 className={`lg:px-4 lg:py-2 text-sm lg:text-md text-center ${
                   heading === "Contact Number" ? "hidden lg:table-cell" : ""

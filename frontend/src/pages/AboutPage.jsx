@@ -90,20 +90,22 @@ const AboutPage = () => {
 
           <div className="grid grid-cols-4 gap-6 justify-items-center">
             <OrganizerCard
-              image="/images/abdul.jpeg"
-              name="Abdul Rahman A"
-              role="Student Coordinator"
+              image="/images/ida.jpg"
+              name="Merry Ida A"
+              role="Convenor"
             />
             <OrganizerCard
               image="/images/suji.jpg"
               name="Suji Andreas M"
               role="Symposium Coordinator"
             />
+
             <OrganizerCard
-              image="/images/ida.jpg"
-              name="Merry Ida A"
-              role="Convenor"
+              image="/images/abdul.jpeg"
+              name="Abdul Rahman A"
+              role="Student Coordinator"
             />
+
             <OrganizerCard
               image="/images/keerthika.jpg"
               name="Keerthika K"
