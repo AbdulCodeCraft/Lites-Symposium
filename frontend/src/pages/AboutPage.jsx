@@ -34,7 +34,7 @@ const AboutPage = () => {
 
             <ul className="space-y-4">
               <li>
-                {" "}
+            
                 DM1: To build Computer Engineers with professional ethics and
                 entrepreneurship skills.
               </li>
