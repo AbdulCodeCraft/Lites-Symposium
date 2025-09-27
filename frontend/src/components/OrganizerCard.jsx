@@ -1,13 +1,17 @@
-
-const OrganizerCard = ({image,name,role}) => {
+const OrganizerCard = ({ image, name, role }) => {
   return (
-    <div className='flex flex-col items-center space-y-1 '>
-      <img className=' overflow-hidden object-cover w-50 md:w-70 md:h-70 rounded-full' src={image} alt={name} />
-      <h1 className='text-md text-center md:text-xl'>{name}</h1>
-      <p className='text-sm text-center text-gray-400'>{role}</p>
-     
+    <div className="flex flex-col items-center justify-start w-40 md:w-52 space-y-2">
+      <img
+        className="w-25 h-25 md:w-60 md:h-60 rounded-full object-cover shadow-md"
+        src={image}
+        alt={name}
+      />
+      <h1 className="text-sm md:text-lg font-medium text-center leading-snug">
+        {name}
+      </h1>
+      <p className="text-xs md:text-sm text-center text-gray-400">{role}</p>
     </div>
-  )
-}
+  );
+};
 
-export default OrganizerCard
+export default OrganizerCard;

@@ -34,7 +34,6 @@ const AboutPage = () => {
 
             <ul className="space-y-4">
               <li>
-            
                 DM1: To build Computer Engineers with professional ethics and
                 entrepreneurship skills.
               </li>
@@ -88,24 +87,22 @@ const AboutPage = () => {
             and memorable symposium experience next month.
           </p>
 
-          <div className="grid grid-cols-4 gap-6 justify-items-center">
+          <div className="grid grid-cols-2 md:grid-cols-4  justify-items-center">
             <OrganizerCard
               image="/images/ida.jpg"
-              name="Mrs.A.Merry Ida,M.E.,(Ph.D)"
+              name="Mrs.A.Merry Ida, M.E., (Ph.D)"
               role="Convenor"
             />
             <OrganizerCard
               image="/images/suji.jpg"
-              name="Mrs.Suji M,M.Tech.,"
+              name="Mrs.Suji M, M.Tech."
               role="Symposium Coordinator"
             />
-
             <OrganizerCard
               image="/images/abdul.jpeg"
               name="Mr.Abdul Rahman A"
               role="Student Coordinator"
             />
-
             <OrganizerCard
               image="/images/keerthika.jpg"
               name="Ms.Keerthika K"
